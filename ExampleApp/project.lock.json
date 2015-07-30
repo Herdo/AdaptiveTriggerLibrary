@@ -3,6 +3,14 @@
   "version": 1,
   "targets": {
     "UAP,Version=v10.0": {
+      "AdaptiveTriggerLibrary/1.0.0": {
+        "compile": {
+          "lib/UAP10.0/AdaptiveTriggerLibrary.dll": {}
+        },
+        "runtime": {
+          "lib/UAP10.0/AdaptiveTriggerLibrary.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Runtime": "[4.0.20, )",
@@ -1538,6 +1546,14 @@
       }
     },
     "UAP,Version=v10.0/win10-arm": {
+      "AdaptiveTriggerLibrary/1.0.0": {
+        "compile": {
+          "lib/UAP10.0/AdaptiveTriggerLibrary.dll": {}
+        },
+        "runtime": {
+          "lib/UAP10.0/AdaptiveTriggerLibrary.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Runtime": "[4.0.20, )",
@@ -3163,6 +3179,14 @@
       }
     },
     "UAP,Version=v10.0/win10-arm-aot": {
+      "AdaptiveTriggerLibrary/1.0.0": {
+        "compile": {
+          "lib/UAP10.0/AdaptiveTriggerLibrary.dll": {}
+        },
+        "runtime": {
+          "lib/UAP10.0/AdaptiveTriggerLibrary.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Runtime": "[4.0.20, )",
@@ -4760,6 +4784,14 @@
       }
     },
     "UAP,Version=v10.0/win10-x86": {
+      "AdaptiveTriggerLibrary/1.0.0": {
+        "compile": {
+          "lib/UAP10.0/AdaptiveTriggerLibrary.dll": {}
+        },
+        "runtime": {
+          "lib/UAP10.0/AdaptiveTriggerLibrary.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Runtime": "[4.0.20, )",
@@ -6390,6 +6422,14 @@
       }
     },
     "UAP,Version=v10.0/win10-x86-aot": {
+      "AdaptiveTriggerLibrary/1.0.0": {
+        "compile": {
+          "lib/UAP10.0/AdaptiveTriggerLibrary.dll": {}
+        },
+        "runtime": {
+          "lib/UAP10.0/AdaptiveTriggerLibrary.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Runtime": "[4.0.20, )",
@@ -7987,6 +8027,14 @@
       }
     },
     "UAP,Version=v10.0/win10-x64": {
+      "AdaptiveTriggerLibrary/1.0.0": {
+        "compile": {
+          "lib/UAP10.0/AdaptiveTriggerLibrary.dll": {}
+        },
+        "runtime": {
+          "lib/UAP10.0/AdaptiveTriggerLibrary.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Runtime": "[4.0.20, )",
@@ -9617,6 +9665,14 @@
       }
     },
     "UAP,Version=v10.0/win10-x64-aot": {
+      "AdaptiveTriggerLibrary/1.0.0": {
+        "compile": {
+          "lib/UAP10.0/AdaptiveTriggerLibrary.dll": {}
+        },
+        "runtime": {
+          "lib/UAP10.0/AdaptiveTriggerLibrary.dll": {}
+        }
+      },
       "Microsoft.CSharp/4.0.0": {
         "dependencies": {
           "System.Runtime": "[4.0.20, )",
@@ -11215,6 +11271,17 @@
     }
   },
   "libraries": {
+    "AdaptiveTriggerLibrary/1.0.0": {
+      "sha512": "QpKRCqqfIZWlJgMACkKRvDJa0xOGunqmlopj/KyC4a8UDCiNjhPxKtv+DcRAzJMhe0Wf0YkWG9b0qKV9qIw95w==",
+      "type": "Package",
+      "files": [
+        "_rels/.rels",
+        "AdaptiveTriggerLibrary.nuspec",
+        "lib/UAP10.0/AdaptiveTriggerLibrary.dll",
+        "package/services/metadata/core-properties/c8c36182d68846d3bcd94245a19c8189.psmdcp",
+        "[Content_Types].xml"
+      ]
+    },
     "Microsoft.CSharp/4.0.0": {
       "sha512": "oWqeKUxHXdK6dL2CFjgMcaBISbkk+AqEg+yvJHE4DElNzS4QaTsCflgkkqZwVlWby1Dg9zo9n+iCAMFefFdJ/A==",
       "type": "Package",

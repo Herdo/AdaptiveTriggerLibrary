@@ -6,9 +6,7 @@
     /// Interface for all adaptive triggers in the project.
     /// </summary>
     /// <typeparam name="TCondition">The type of the <see cref="Condition"/>.</typeparam>
-    /// <typeparam name="TConditionModifier">The type of the <see cref="ConditionModifier"/>, that can influence the way that the <see cref="Condition"/> is treated.</typeparam>
-    public interface IAdaptiveTrigger<TCondition, TConditionModifier>
-        where TConditionModifier : IConditionModifier<TCondition>
+    public interface IAdaptiveTrigger<TCondition>
     {
         /// <summary>
         /// Occurs when the value of <see cref="IsActive"/> changed.
@@ -30,15 +28,8 @@
         /// <summary>
         /// Gets or sets the modifier that will be applied to the validation of the <see cref="Condition"/>.
         /// </summary>
-        /// <remarks>This property can only be set once.
-        /// If no condition modifier is specified, the default modifier for the <typeparamref name="TConditionModifier"/> will be used.</remarks>
+        /// <remarks>This property can only be set once.</remarks>
         /// <exception cref="InvalidOperationException"><see cref="ConditionModifier"/> is set more than once.</exception>
-        TConditionModifier ConditionModifier { get; set; }
-
-        /// <summary>
-        /// Gets the default modifier for the <typeparamref name="TConditionModifier"/>.
-        /// </summary>
-        /// <returns>The default implementation.</returns>
-        TConditionModifier GetDefaultModifier();
+        IConditionModifier<TCondition> ConditionModifier { get; set; }
     }
 }
