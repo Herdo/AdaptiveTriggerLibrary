@@ -113,6 +113,8 @@
     <None Include="project.json" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Interfaces\IAdaptiveTrigger.cs" />
+    <Compile Include="Interfaces\IConditionModifier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="Properties\AdaptiveTriggerLibrary.rd.xml" />
   </ItemGroup>
