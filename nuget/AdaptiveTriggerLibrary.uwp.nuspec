@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata minClientVersion="2.8.6">
+        <id>AdaptiveTriggerLibrary</id>
+        <version>0.0.0-SpecifyVersionOnCommandline</version>
+        <title>Adaptive Trigger Library for the Universal Windows Platform (Windows 10)</title>
+        <authors>Stefan Over</authors>
+        <owners>Stefan Over</owners>
+        <description>A library of Adaptive Triggers for Windows Universal Platform applications. The library allows you to easily create visual states triggered by common trigger conditions.</description>
+        <projectUrl>http://herdo.github.io/AdaptiveTriggerLibrary/</projectUrl>
+        <licenseUrl>$LicenseUrl$</licenseUrl>
+        <requireLicenseAcceptance>$RequireLicenseAcceptance$</requireLicenseAcceptance>
+        <copyright>Copyright (c) Stefan Over</copyright>
+        <tags>universal windows platform adaptive trigger library collection visual state c# UWP</tags>
+    </metadata>
+
+    <files>
+      <file target="lib\uap10.0\AdaptiveTriggerLibrary.dll"             src="$bin$\x86\Release\AdaptiveTriggerLibrary.dll" />
+      <file target="lib\uap10.0\AdaptiveTriggerLibrary.xml"             src="$bin$\Release\AdaptiveTriggerLibrary.xml" />
+
+      <file target="runtimes\win10-arm\AdaptiveTriggerLibrary.dll" 		src="$bin$\ARM\Release\AdaptiveTriggerLibrary.dll" />
+      <file target="runtimes\win10-x64\AdaptiveTriggerLibrary.dll" 		src="$bin$\x64\Release\AdaptiveTriggerLibrary.dll" />
+      <file target="runtimes\win10-x86\AdaptiveTriggerLibrary.dll" 		src="$bin$\x86\Release\AdaptiveTriggerLibrary.dll" />
+    </files>
+</package>
