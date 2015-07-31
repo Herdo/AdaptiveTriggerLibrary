@@ -1,4 +1,4 @@
-﻿namespace AdaptiveTriggerLibrary.Triggers.UserInteractionTriggers
+﻿namespace AdaptiveTriggerLibrary.Triggers.UserInterfaceTriggers
 {
     using Windows.UI.Core;
     using Windows.UI.ViewManagement;
@@ -7,20 +7,20 @@
     using Functional;
 
     /// <summary>
-    /// This trigger activates, if the user interaction mode
+    /// This trigger activates, if current window orientation
     /// matches the specified <see cref="AdaptiveTriggerBase{TCondition,TConditionModifier}.Condition"/>.
     /// </summary>
-    public class InteractionModeTrigger : AdaptiveTriggerBase<UserInteractionMode, IGenericModifier<UserInteractionMode>>
+    public class OrientationTrigger : AdaptiveTriggerBase<ApplicationViewOrientation, IGenericModifier<ApplicationViewOrientation>>
     {
         ///////////////////////////////////////////////////////////////////
         #region Constructors
 
         /// <summary>
-        /// Initializes a new instance of the <see cref="InteractionModeTrigger"/> class.
+        /// Initializes a new instance of the <see cref="OrientationTrigger"/> class.
         /// Default modifier: <see cref="EqualsModifier{T}"/>.
         /// </summary>
-        public InteractionModeTrigger()
-            : base(new EqualsModifier<UserInteractionMode>())
+        public OrientationTrigger()
+            : base(new EqualsModifier<ApplicationViewOrientation>())
         {
             // Create a weak subscription to the SizeChanged event so that we don't pin the trigger or page in memory
             WeakEvent.Subscribe<WindowSizeChangedEventHandler>(Window.Current, nameof(Window.Current.SizeChanged), MainWindow_SizeChanged);
@@ -33,9 +33,13 @@
         ///////////////////////////////////////////////////////////////////
         #region Private Methods
 
-        private static UserInteractionMode GetCurrentValue()
+        private ApplicationViewOrientation GetCurrentValue()
         {
-            return UIViewSettings.GetForCurrentView().UserInteractionMode;
+            var window = Window.Current;
+            var currentOrientation = window.Bounds.Width >= window.Bounds.Height
+                ? ApplicationViewOrientation.Landscape
+                : ApplicationViewOrientation.Portrait;
+            return currentOrientation;
         }
 
         #endregion
@@ -43,7 +47,7 @@
         ///////////////////////////////////////////////////////////////////
         #region Event Handler
 
-        private void MainWindow_SizeChanged(object sender, WindowSizeChangedEventArgs e)
+        private void MainWindow_SizeChanged(object sender, WindowSizeChangedEventArgs windowSizeChangedEventArgs)
         {
             CurrentValue = GetCurrentValue();
         }
