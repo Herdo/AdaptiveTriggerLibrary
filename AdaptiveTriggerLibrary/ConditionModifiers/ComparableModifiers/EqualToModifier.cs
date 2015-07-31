@@ -9,7 +9,8 @@
 
         public bool IsConditionMet(IComparable value, IComparable condition)
         {
-            return Equals(value, condition);
+            return ReferenceEquals(value, condition)
+                || Equals(value, condition);
         }
 
         #endregion

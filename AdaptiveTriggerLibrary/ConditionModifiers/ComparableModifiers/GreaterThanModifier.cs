@@ -9,7 +9,9 @@
 
         public bool IsConditionMet(IComparable value, IComparable condition)
         {
-            return value.CompareTo(condition) > 0;
+            return !ReferenceEquals(value, condition)
+                && !Equals(value, condition)
+                && value.CompareTo(condition) > 0;
         }
 
         #endregion
