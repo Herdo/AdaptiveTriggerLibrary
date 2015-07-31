@@ -7,7 +7,7 @@
     /// This trigger activates, if $TRIGGER_ACTIVATION$&#xD;
     /// matches the specified &lt;see cref="AdaptiveTriggerBase{TCondition,TConditionModifier}.Condition"/&gt;.&#xD;
     /// &lt;/summary&gt;&#xD;
-    public class $CLASS$ : AdaptiveTriggerBase&lt;$END$, &gt;&#xD;
+    public class $CLASS$ : AdaptiveTriggerBase&lt;$TCONDITION$, $TCONDITION_MODIFIER$&gt;&#xD;
     {&#xD;
         ///////////////////////////////////////////////////////////////////&#xD;
         #region Constructors&#xD;
@@ -26,9 +26,9 @@
         ///////////////////////////////////////////////////////////////////&#xD;
         #region Private Methods&#xD;
 &#xD;
-        private string GetCurrentValue()&#xD;
+        private $TCONDITION$ GetCurrentValue()&#xD;
         {&#xD;
-			throw new System.NotImplementedException();&#xD;
+			$SELSTART$throw new System.NotImplementedException();$SELEND$&#xD;
         }&#xD;
 &#xD;
         #endregion&#xD;
@@ -57,4 +57,8 @@
 	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Field/=TRIGGER_005FACTIVATION/@KeyIndexDefined">True</s:Boolean>
 	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Field/=TRIGGER_005FACTIVATION/Order/@EntryValue">3</s:Int64>
 	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Field/=DEFAULT_005FMODIFIER/@KeyIndexDefined">True</s:Boolean>
-	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Field/=DEFAULT_005FMODIFIER/Order/@EntryValue">4</s:Int64></wpf:ResourceDictionary>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Field/=DEFAULT_005FMODIFIER/Order/@EntryValue">4</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Field/=TCONDITION/@KeyIndexDefined">True</s:Boolean>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Field/=TCONDITION/Order/@EntryValue">5</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Field/=TCONDITION_005FMODIFIER/@KeyIndexDefined">True</s:Boolean>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Field/=TCONDITION_005FMODIFIER/Order/@EntryValue">6</s:Int64></wpf:ResourceDictionary>
