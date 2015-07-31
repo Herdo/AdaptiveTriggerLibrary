@@ -109,7 +109,6 @@
     <Compile Include="UnitTestApp.xaml.cs">
       <DependentUpon>UnitTestApp.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Tests\TriggerTests\DeviceFamilyTriggerTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="UnitTestApp.xaml">
@@ -132,6 +131,7 @@
     <Content Include="Assets\Square44x44Logo.targetsize-24_altform-unplated.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\Wide310x150Logo.scale-200.png" />
+    <Content Include="Tests\TriggerTests\READ ME.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AdaptiveTriggerLibrary\AdaptiveTriggerLibrary.csproj">

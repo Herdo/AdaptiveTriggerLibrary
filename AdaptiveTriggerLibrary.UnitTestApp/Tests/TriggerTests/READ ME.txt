@@ -1,0 +1,3 @@
+﻿Trigger tests cannot be written at the current point in time.
+Trigger tests require the UI thread access. However, test methods with the [TestMethodAttribute] don't have access to the UI thread.
+The suggested [UITestMethodAttribute] is currently not available.
