@@ -40,14 +40,13 @@
         public void Equals_Bool_InvalidType()
         {
             // Arrange
-            bool result;
             var modifier = new EqualToModifier();
 
             // Act
-            result = modifier.IsConditionMet("foo", false);
+            Action action = () => modifier.IsConditionMet("foo", false);
 
             // Assert
-            Assert.IsFalse(result);
+            Assert.ThrowsException<ArgumentException>(action);
         }
 
         [TestMethod]
@@ -82,14 +81,13 @@
         public void Equals_Int32_InvalidType()
         {
             // Arrange
-            bool result;
             var modifier = new EqualToModifier();
 
             // Act
-            result = modifier.IsConditionMet("foo", 15);
+            Action action = () => modifier.IsConditionMet("foo", 15);
 
             // Assert
-            Assert.IsFalse(result);
+            Assert.ThrowsException<ArgumentException>(action);
         }
 
         [TestMethod]
@@ -124,14 +122,13 @@
         public void Equals_Double_InvalidType()
         {
             // Arrange
-            bool result;
             var modifier = new EqualToModifier();
 
             // Act
-            result = modifier.IsConditionMet("foo", 15.0);
+            Action action = () => modifier.IsConditionMet("foo", 15.0);
 
             // Assert
-            Assert.IsFalse(result);
+            Assert.ThrowsException<ArgumentException>(action);
         }
 
         [TestMethod]
@@ -166,14 +163,13 @@
         public void Equals_String_InvalidType()
         {
             // Arrange
-            bool result;
             var modifier = new EqualToModifier();
 
             // Act
-            result = modifier.IsConditionMet(42, "bar");
+            Action action = () => modifier.IsConditionMet(42, "bar");
 
             // Assert
-            Assert.IsFalse(result);
+            Assert.ThrowsException<ArgumentException>(action);
         }
 
         [TestMethod]
@@ -208,14 +204,13 @@
         public void Equals_DateTime_InvalidType()
         {
             // Arrange
-            bool result;
             var modifier = new EqualToModifier();
 
             // Act
-            result = modifier.IsConditionMet("foo", DateTime.MinValue);
+            Action action = () => modifier.IsConditionMet("foo", DateTime.MinValue);
 
             // Assert
-            Assert.IsFalse(result);
+            Assert.ThrowsException<ArgumentException>(action);
         }
 
         [TestMethod]
@@ -250,14 +245,13 @@
         public void Equals_CustomIComparableImplementation_InvalidType()
         {
             // Arrange
-            bool result;
             var modifier = new EqualToModifier();
 
             // Act
-            result = modifier.IsConditionMet("foo", new CustomIComparableImplementation(15));
+            Action action = () => modifier.IsConditionMet("foo", new CustomIComparableImplementation(15));
 
             // Assert
-            Assert.IsFalse(result);
+            Assert.ThrowsException<ArgumentException>(action);
         }
     }
 }
