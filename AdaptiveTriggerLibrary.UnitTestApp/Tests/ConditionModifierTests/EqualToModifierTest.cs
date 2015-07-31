@@ -1,7 +1,9 @@
 ﻿namespace AdaptiveTriggerLibrary.UnitTestApp.Tests.ConditionModifierTests
 {
+    using System;
     using ConditionModifiers.ComparableModifiers;
     using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
+    using Mocks;
 
     [TestClass]
     public class EqualToModifierTest
@@ -29,6 +31,230 @@
 
             // Act
             result = modifier.IsConditionMet(true, false);
+
+            // Assert
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public void Equals_Bool_InvalidType()
+        {
+            // Arrange
+            bool result;
+            var modifier = new EqualToModifier();
+
+            // Act
+            result = modifier.IsConditionMet("foo", false);
+
+            // Assert
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public void Equals_Int32_True()
+        {
+            // Arrange
+            bool result;
+            var modifier = new EqualToModifier();
+
+            // Act
+            result = modifier.IsConditionMet(15, 15);
+
+            // Assert
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void Equals_Int32_False()
+        {
+            // Arrange
+            bool result;
+            var modifier = new EqualToModifier();
+
+            // Act
+            result = modifier.IsConditionMet(12, 15);
+
+            // Assert
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public void Equals_Int32_InvalidType()
+        {
+            // Arrange
+            bool result;
+            var modifier = new EqualToModifier();
+
+            // Act
+            result = modifier.IsConditionMet("foo", 15);
+
+            // Assert
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public void Equals_Double_True()
+        {
+            // Arrange
+            bool result;
+            var modifier = new EqualToModifier();
+
+            // Act
+            result = modifier.IsConditionMet(15.0, 15.0);
+
+            // Assert
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void Equals_Double_False()
+        {
+            // Arrange
+            bool result;
+            var modifier = new EqualToModifier();
+
+            // Act
+            result = modifier.IsConditionMet(12.0, 15.0);
+
+            // Assert
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public void Equals_Double_InvalidType()
+        {
+            // Arrange
+            bool result;
+            var modifier = new EqualToModifier();
+
+            // Act
+            result = modifier.IsConditionMet("foo", 15.0);
+
+            // Assert
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public void Equals_String_True()
+        {
+            // Arrange
+            bool result;
+            var modifier = new EqualToModifier();
+
+            // Act
+            result = modifier.IsConditionMet("bar", "bar");
+
+            // Assert
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void Equals_String_False()
+        {
+            // Arrange
+            bool result;
+            var modifier = new EqualToModifier();
+
+            // Act
+            result = modifier.IsConditionMet("foo", "bar");
+
+            // Assert
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public void Equals_String_InvalidType()
+        {
+            // Arrange
+            bool result;
+            var modifier = new EqualToModifier();
+
+            // Act
+            result = modifier.IsConditionMet(42, "bar");
+
+            // Assert
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public void Equals_DateTime_True()
+        {
+            // Arrange
+            bool result;
+            var modifier = new EqualToModifier();
+
+            // Act
+            result = modifier.IsConditionMet(DateTime.MinValue, DateTime.MinValue);
+
+            // Assert
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void Equals_DateTime_False()
+        {
+            // Arrange
+            bool result;
+            var modifier = new EqualToModifier();
+
+            // Act
+            result = modifier.IsConditionMet(DateTime.MaxValue, DateTime.MinValue);
+
+            // Assert
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public void Equals_DateTime_InvalidType()
+        {
+            // Arrange
+            bool result;
+            var modifier = new EqualToModifier();
+
+            // Act
+            result = modifier.IsConditionMet("foo", DateTime.MinValue);
+
+            // Assert
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public void Equals_CustomIComparableImplementation_True()
+        {
+            // Arrange
+            bool result;
+            var modifier = new EqualToModifier();
+
+            // Act
+            result = modifier.IsConditionMet(new CustomIComparableImplementation(15), new CustomIComparableImplementation(15));
+
+            // Assert
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void Equals_CustomIComparableImplementation_False()
+        {
+            // Arrange
+            bool result;
+            var modifier = new EqualToModifier();
+
+            // Act
+            result = modifier.IsConditionMet(new CustomIComparableImplementation(5), new CustomIComparableImplementation(15));
+
+            // Assert
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
+        public void Equals_CustomIComparableImplementation_InvalidType()
+        {
+            // Arrange
+            bool result;
+            var modifier = new EqualToModifier();
+
+            // Act
+            result = modifier.IsConditionMet("foo", new CustomIComparableImplementation(15));
 
             // Assert
             Assert.IsFalse(result);
