@@ -3,8 +3,6 @@
 	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Description/@EntryValue">Template for new Adaptive Triggers</s:String>
 	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Text/@EntryValue">$HEADER$namespace $NAMESPACE$&#xD;
 {&#xD;
-    using ConditionModifiers.ComparableModifiers;&#xD;
-&#xD;
     /// &lt;summary&gt;&#xD;
     /// This trigger activates, if $TRIGGER_ACTIVATION$&#xD;
     /// matches the specified &lt;see cref="AdaptiveTriggerBase{TCondition,TConditionModifier}.Condition"/&gt;.&#xD;
