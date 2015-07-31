@@ -8,6 +8,7 @@
     xmlns:logicalModifiers="using:AdaptiveTriggerLibrary.ConditionModifiers.LogicalModifiers"
     xmlns:logicalTriggers="using:AdaptiveTriggerLibrary.Triggers.LogicalTriggers"
     xmlns:hardwareInterfaceTriggers="using:AdaptiveTriggerLibrary.Triggers.HardwareInterfaceTriggers"
+    xmlns:userInterfaceTriggers="using:AdaptiveTriggerLibrary.Triggers.UserInterfaceTriggers"
     mc:Ignorable="d">
 
     <Page.Resources>
@@ -15,8 +16,13 @@
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
         <VisualStateManager.VisualStateGroups>
+            <!-- Visual State Group for Device Family -->
             <VisualStateGroup>
                 <VisualState>
                     <VisualState.StateTriggers>
@@ -33,12 +39,58 @@
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
+
+            <!-- Visual State Group for Layout -->
+            <VisualStateGroup>
+                <!-- Vertical Layout -->
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <userInterfaceTriggers:OrientationTrigger Condition="Portrait"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="HorizontalRectangle.Visibility"
+                                Value="Collapsed"/>
+                        <Setter Target="VerticalRectangle.Visibility"
+                                Value="Visible"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <!-- Horizontal Layout -->
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <userInterfaceTriggers:OrientationTrigger Condition="Landscape"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="HorizontalRectangle.Visibility"
+                                Value="Visible"/>
+                        <Setter Target="VerticalRectangle.Visibility"
+                                Value="Collapsed"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         
         <TextBlock x:Name="SupportedTextBlock"
+                   Grid.Row="0"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    Text="This device family is not supported!"
                    Foreground="{ThemeResource ApplicationForegroundThemeBrush}"/>
+        
+        <Rectangle Grid.Row="1"
+                   x:Name="HorizontalRectangle"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Width="300"
+                   Height="100"
+                   Fill="Red"
+                   Visibility="Collapsed"/>
+        <Rectangle Grid.Row="1"
+                   x:Name="VerticalRectangle"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Width="100"
+                   Height="300"
+                   Fill="Blue"
+                   Visibility="Collapsed"/>
     </Grid>
 </Page>
