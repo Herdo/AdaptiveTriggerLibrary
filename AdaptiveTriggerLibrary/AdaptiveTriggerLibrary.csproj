@@ -121,13 +121,18 @@
     <Compile Include="ConditionModifiers\ComparableModifiers\LessThanModifier.cs" />
     <Compile Include="ConditionModifiers\ComparableModifiers\NotEqualToModifier.cs" />
     <Compile Include="ConditionModifiers\ComparableModifiers\EqualToModifier.cs" />
+    <Compile Include="ConditionModifiers\LogicalModifiers\AndModifier.cs" />
+    <Compile Include="ConditionModifiers\LogicalModifiers\ILogicalModifier.cs" />
+    <Compile Include="ConditionModifiers\LogicalModifiers\OrModifier.cs" />
     <Compile Include="Triggers\IAdaptiveTrigger.cs" />
     <Compile Include="ConditionModifiers\IConditionModifier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Triggers\AdaptiveTriggerBase.cs" />
     <Compile Include="Triggers\HardwareInterfaceTriggers\DeviceFamilyTrigger.cs" />
+    <Compile Include="Triggers\LogicalTriggers\MultiTrigger.cs" />
     <Content Include="Properties\AdaptiveTriggerLibrary.rd.xml" />
   </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

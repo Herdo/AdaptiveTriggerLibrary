@@ -64,11 +64,22 @@
                     _isCurrentValueSet = false;
         }
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="AdaptiveTriggerBase{TCondition, TConditionModifier}"/> class with a given default condition and default modifier.
+        /// </summary>
+        /// <param name="defaultCondition">The default condition.</param>
+        /// <param name="defaultModifier">The default modifier.</param>
+        protected AdaptiveTriggerBase(TCondition defaultCondition, TConditionModifier defaultModifier)
+            : this(defaultModifier)
+        {
+            _condition = defaultCondition;
+        }
+
         #endregion
 
         ///////////////////////////////////////////////////////////////////
         #region Private Methods
-            
+
         private void ValidateIfActive()
         {
             if (!_isConditionSet

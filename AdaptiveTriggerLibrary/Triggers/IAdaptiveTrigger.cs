@@ -4,12 +4,9 @@
     using ConditionModifiers;
 
     /// <summary>
-    /// Interface for all adaptive triggers in the project.
+    /// Base interface for all adaptive triggers in the project.
     /// </summary>
-    /// <typeparam name="TCondition">The type of the <see cref="Condition"/>.</typeparam>
-    /// <typeparam name="TConditionModifier">The type of the <see cref="ConditionModifier"/>, that can influence the way that the <see cref="Condition"/> is treated.</typeparam>
-    public interface IAdaptiveTrigger<TCondition, TConditionModifier>
-        where TConditionModifier : IConditionModifier<TCondition>
+    public interface IAdaptiveTrigger
     {
         /// <summary>
         /// Occurs when the value of <see cref="IsActive"/> changed.
@@ -20,9 +17,18 @@
         /// Gets if the trigger is currently active.
         /// </summary>
         bool IsActive { get; }
+    }
 
+    /// <summary>
+    /// Interface for all adaptive triggers in the project.
+    /// </summary>
+    /// <typeparam name="TCondition">The type of the <see cref="Condition"/>.</typeparam>
+    /// <typeparam name="TConditionModifier">The type of the <see cref="ConditionModifier"/>, that can influence the way that the <see cref="Condition"/> is treated.</typeparam>
+    public interface IAdaptiveTrigger<TCondition, TConditionModifier> : IAdaptiveTrigger
+        where TConditionModifier : IConditionModifier<TCondition>
+    {
         /// <summary>
-        /// Gets or sets the condition that must be met, in order to set <see cref="IsActive"/> to true.
+        /// Gets or sets the condition that must be met, in order to set <see cref="IAdaptiveTrigger.IsActive"/> to true.
         /// </summary>
         /// <remarks>This property can only be set once.</remarks>
         /// <exception cref="InvalidOperationException"><see cref="Condition"/> is set more than once.</exception>
