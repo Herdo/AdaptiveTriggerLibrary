@@ -1,0 +1,62 @@
+﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Description/@EntryValue">Template for new Adaptive Triggers</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Text/@EntryValue">$HEADER$namespace $NAMESPACE$&#xD;
+{&#xD;
+    using ConditionModifiers.ComparableModifiers;&#xD;
+&#xD;
+    /// &lt;summary&gt;&#xD;
+    /// This trigger activates, if $TRIGGER_ACTIVATION$&#xD;
+    /// matches the specified &lt;see cref="AdaptiveTriggerBase{TCondition,TConditionModifier}.Condition"/&gt;.&#xD;
+    /// &lt;/summary&gt;&#xD;
+    public class $CLASS$ : AdaptiveTriggerBase&lt;$END$, &gt;&#xD;
+    {&#xD;
+        ///////////////////////////////////////////////////////////////////&#xD;
+        #region Constructors&#xD;
+&#xD;
+        /// &lt;summary&gt;&#xD;
+        /// Initializes a new instance of the &lt;see cref="$CLASS$"/&gt; class.&#xD;
+        /// Default modifier: &lt;see cref="$DEFAULT_MODIFIER$"/&gt;.&#xD;
+        /// &lt;/summary&gt;&#xD;
+        public $CLASS$()&#xD;
+            : base(new $DEFAULT_MODIFIER$())&#xD;
+        {&#xD;
+        }&#xD;
+&#xD;
+        #endregion&#xD;
+&#xD;
+        ///////////////////////////////////////////////////////////////////&#xD;
+        #region Private Methods&#xD;
+&#xD;
+        private string GetCurrentValue()&#xD;
+        {&#xD;
+			throw new System.NotImplementedException();&#xD;
+        }&#xD;
+&#xD;
+        #endregion&#xD;
+    }&#xD;
+}</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Reformat/@EntryValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/ShortenQualifiedReferences/@EntryValue">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/CustomProperties/=FileName/@EntryIndexedValue">NewTrigger</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/CustomProperties/=Extension/@EntryIndexedValue">cs</s:String>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/CustomProperties/=ValidateFileName/@EntryIndexedValue">True</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Applicability/=File/@EntryIndexedValue">True</s:Boolean>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Scope/=E8F0594528C33E45BBFEC6CFE851095D/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Scope/=E8F0594528C33E45BBFEC6CFE851095D/Type/@EntryValue">InCSharpProjectFile</s:String>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Field/=HEADER/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Field/=HEADER/Expression/@EntryValue">fileheader()</s:String>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Field/=HEADER/InitialRange/@EntryValue">-1</s:Int64>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Field/=HEADER/Order/@EntryValue">0</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Field/=NAMESPACE/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Field/=NAMESPACE/Expression/@EntryValue">fileDefaultNamespace()</s:String>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Field/=NAMESPACE/InitialRange/@EntryValue">-1</s:Int64>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Field/=NAMESPACE/Order/@EntryValue">1</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Field/=CLASS/@KeyIndexDefined">True</s:Boolean>
+	<s:String x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Field/=CLASS/Expression/@EntryValue">getFileNameWithoutExtension()</s:String>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Field/=CLASS/InitialRange/@EntryValue">-1</s:Int64>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Field/=CLASS/Order/@EntryValue">2</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Field/=TRIGGER_005FACTIVATION/@KeyIndexDefined">True</s:Boolean>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Field/=TRIGGER_005FACTIVATION/Order/@EntryValue">3</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Field/=DEFAULT_005FMODIFIER/@KeyIndexDefined">True</s:Boolean>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Field/=DEFAULT_005FMODIFIER/Order/@EntryValue">4</s:Int64></wpf:ResourceDictionary>

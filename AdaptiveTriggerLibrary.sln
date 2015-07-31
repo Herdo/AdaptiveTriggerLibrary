@@ -24,6 +24,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdaptiveTriggerLibrary.Unit
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AdaptiveTriggerLibrary.TryOut", "AdaptiveTriggerLibrary.TryOut\AdaptiveTriggerLibrary.TryOut.csproj", "{301BC1F8-8E11-49ED-BEED-94606CC0C06F}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ReSharper Templates", "ReSharper Templates", "{6FA966E4-68DC-4292-BE8A-0AB2466048D2}"
+	ProjectSection(SolutionItems) = preProject
+		ReSharper Templates\Adaptive Trigger Implementation Template.DotSettings = ReSharper Templates\Adaptive Trigger Implementation Template.DotSettings
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -101,5 +106,6 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{A4CEF43A-381F-4560-85CF-08E3C6A4A071} = {BFF4F4E1-35CB-4CC8-9637-58A03475E080}
+		{6FA966E4-68DC-4292-BE8A-0AB2466048D2} = {BFF4F4E1-35CB-4CC8-9637-58A03475E080}
 	EndGlobalSection
 EndGlobal
