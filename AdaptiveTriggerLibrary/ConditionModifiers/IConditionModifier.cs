@@ -1,11 +1,11 @@
-﻿namespace AdaptiveTriggerLibrary.Interfaces
+﻿namespace AdaptiveTriggerLibrary.ConditionModifiers
 {
-    using System;
+    using Triggers;
 
     /// <summary>
     /// Interface for confition modifiers.
     /// </summary>
-    /// <seealso cref="IAdaptiveTrigger{TCondition,TConditionModifier}"/>
+    /// <seealso cref="IAdaptiveTrigger{TCondition}"/>
     public interface IConditionModifier<in TCondition>
     {
         /// <summary>

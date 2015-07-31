@@ -1,9 +1,8 @@
 ﻿namespace AdaptiveTriggerLibrary.ConditionModifiers.ComparableModifiers
 {
     using System;
-    using Interfaces;
 
-    public class GreaterThanEqualToModifier : IConditionModifier<IComparable>
+    public class GreaterThanEqualToModifier : IComparableModifier
     {
         ///////////////////////////////////////////////////////////////////
         #region IConditionModifier<IComparable> Members

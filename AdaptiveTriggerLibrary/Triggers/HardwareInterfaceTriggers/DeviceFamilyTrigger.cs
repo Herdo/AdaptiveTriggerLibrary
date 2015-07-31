@@ -2,14 +2,15 @@
 {
     using ConditionModifiers.ComparableModifiers;
 
-    public class DeviceFamilyTrigger : AdaptiveTriggerBase<string>
+    public class DeviceFamilyTrigger : AdaptiveTriggerBase<string, IComparableModifier>
     {
         ///////////////////////////////////////////////////////////////////
         #region Constructors
 
         public DeviceFamilyTrigger()
-            : base(GetStaticValue(), new EqualToModifier())
+            : base(new EqualToModifier())
         {
+            CurrentValue = GetCurrentValue();
         }
 
         #endregion
@@ -17,7 +18,7 @@
         ///////////////////////////////////////////////////////////////////
         #region Private Methods
 
-        private static string GetStaticValue()
+        private static string GetCurrentValue()
         {
             var qualifiers = Windows.ApplicationModel.Resources
                                     .Core.ResourceContext
