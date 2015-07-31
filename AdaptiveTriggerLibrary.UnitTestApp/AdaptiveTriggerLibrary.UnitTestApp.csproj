@@ -98,6 +98,8 @@
   <ItemGroup>
     <Compile Include="Mocks\CustomIComparableImplementation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tests\ConditionModifierTests\OrModifierTest.cs" />
+    <Compile Include="Tests\ConditionModifierTests\AndModifierTest.cs" />
     <Compile Include="Tests\ConditionModifierTests\LessThanEqualToModifierTest.cs" />
     <Compile Include="Tests\ConditionModifierTests\GreaterThanEqualToModifierTest.cs" />
     <Compile Include="Tests\ConditionModifierTests\GreaterThanModifierTest.cs" />
