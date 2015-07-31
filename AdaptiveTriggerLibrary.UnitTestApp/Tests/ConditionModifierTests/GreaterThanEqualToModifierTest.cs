@@ -17,7 +17,7 @@
             var modifier = new GreaterThanEqualToModifier();
 
             // Act
-            result1 = modifier.IsConditionMet(true, false);
+            result1 = modifier.IsConditionMet(false, true);
             result2 = modifier.IsConditionMet(false, false);
 
             // Assert
@@ -33,7 +33,7 @@
             var modifier = new GreaterThanEqualToModifier();
 
             // Act
-            result = modifier.IsConditionMet(false, true);
+            result = modifier.IsConditionMet(true, false);
 
             // Assert
             Assert.IsFalse(result);
@@ -61,7 +61,7 @@
             var modifier = new GreaterThanEqualToModifier();
 
             // Act
-            result1 = modifier.IsConditionMet(15, 12);
+            result1 = modifier.IsConditionMet(12, 15);
             result2 = modifier.IsConditionMet(12, 12);
 
             // Assert
@@ -77,7 +77,7 @@
             var modifier = new GreaterThanEqualToModifier();
 
             // Act
-            result = modifier.IsConditionMet(12, 15);
+            result = modifier.IsConditionMet(15, 12);
 
             // Assert
             Assert.IsFalse(result);
@@ -105,7 +105,7 @@
             var modifier = new GreaterThanEqualToModifier();
 
             // Act
-            result1 = modifier.IsConditionMet(15.0, 12.0);
+            result1 = modifier.IsConditionMet(12.0, 15.0);
             result2 = modifier.IsConditionMet(12.0, 12.0);
 
             // Assert
@@ -121,7 +121,7 @@
             var modifier = new GreaterThanEqualToModifier();
 
             // Act
-            result = modifier.IsConditionMet(12.0, 15.0);
+            result = modifier.IsConditionMet(15.0, 12.0);
 
             // Assert
             Assert.IsFalse(result);
@@ -149,7 +149,7 @@
             var modifier = new GreaterThanEqualToModifier();
 
             // Act
-            result1 = modifier.IsConditionMet("foo", "bar");
+            result1 = modifier.IsConditionMet("bar", "foo");
             result2 = modifier.IsConditionMet("bar", "bar");
 
             // Assert
@@ -165,7 +165,7 @@
             var modifier = new GreaterThanEqualToModifier();
 
             // Act
-            result = modifier.IsConditionMet("bar", "foo");
+            result = modifier.IsConditionMet("foo", "bar");
 
             // Assert
             Assert.IsFalse(result);
@@ -193,7 +193,7 @@
             var modifier = new GreaterThanEqualToModifier();
 
             // Act
-            result1 = modifier.IsConditionMet(DateTime.MaxValue, DateTime.MinValue);
+            result1 = modifier.IsConditionMet(DateTime.MinValue, DateTime.MaxValue);
             result2 = modifier.IsConditionMet(DateTime.MinValue, DateTime.MinValue);
 
             // Assert
@@ -209,7 +209,7 @@
             var modifier = new GreaterThanEqualToModifier();
 
             // Act
-            result = modifier.IsConditionMet(DateTime.MinValue, DateTime.MaxValue);
+            result = modifier.IsConditionMet(DateTime.MaxValue, DateTime.MinValue);
 
             // Assert
             Assert.IsFalse(result);
@@ -237,7 +237,7 @@
             var modifier = new GreaterThanEqualToModifier();
 
             // Act
-            result1 = modifier.IsConditionMet(new CustomIComparableImplementation(15), new CustomIComparableImplementation(5));
+            result1 = modifier.IsConditionMet(new CustomIComparableImplementation(5), new CustomIComparableImplementation(15));
             result2 = modifier.IsConditionMet(new CustomIComparableImplementation(5), new CustomIComparableImplementation(5));
 
             // Assert
@@ -253,7 +253,7 @@
             var modifier = new GreaterThanEqualToModifier();
 
             // Act
-            result = modifier.IsConditionMet(new CustomIComparableImplementation(12), new CustomIComparableImplementation(15));
+            result = modifier.IsConditionMet(new CustomIComparableImplementation(15), new CustomIComparableImplementation(12));
 
             // Assert
             Assert.IsFalse(result);

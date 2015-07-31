@@ -12,9 +12,11 @@
             var value = values.Length >= 1
                 ? values[0]
                 : null;
+            if (value == null)
+                return false;
             return !ReferenceEquals(condition, value)
                 && !Equals(condition, value)
-                && condition.CompareTo(value) != 0;
+                && value.CompareTo(condition) != 0;
         }
 
         #endregion

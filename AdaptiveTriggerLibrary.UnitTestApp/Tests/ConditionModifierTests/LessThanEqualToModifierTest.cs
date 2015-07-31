@@ -17,7 +17,7 @@
             var modifier = new LessThanEqualToModifier();
 
             // Act
-            result1 = modifier.IsConditionMet(false, true);
+            result1 = modifier.IsConditionMet(true, false);
             result2 = modifier.IsConditionMet(false, false);
 
             // Assert
@@ -33,7 +33,7 @@
             var modifier = new LessThanEqualToModifier();
 
             // Act
-            result = modifier.IsConditionMet(true, false);
+            result = modifier.IsConditionMet(false, true);
 
             // Assert
             Assert.IsFalse(result);
@@ -61,8 +61,8 @@
             var modifier = new LessThanEqualToModifier();
 
             // Act
-            result1 = modifier.IsConditionMet(12, 15);
-            result2 = modifier.IsConditionMet(12, 12);
+            result1 = modifier.IsConditionMet(15, 12);
+            result2 = modifier.IsConditionMet(15, 15);
 
             // Assert
             Assert.IsTrue(result1, "LessThan failed.");
@@ -77,7 +77,7 @@
             var modifier = new LessThanEqualToModifier();
 
             // Act
-            result = modifier.IsConditionMet(15, 12);
+            result = modifier.IsConditionMet(12, 15);
 
             // Assert
             Assert.IsFalse(result);
@@ -105,8 +105,8 @@
             var modifier = new LessThanEqualToModifier();
 
             // Act
-            result1 = modifier.IsConditionMet(12.0, 15.0);
-            result2 = modifier.IsConditionMet(12.0, 12.0);
+            result1 = modifier.IsConditionMet(15.0, 12.0);
+            result2 = modifier.IsConditionMet(15.0, 15.0);
 
             // Assert
             Assert.IsTrue(result1, "LessThan failed.");
@@ -121,7 +121,7 @@
             var modifier = new LessThanEqualToModifier();
 
             // Act
-            result = modifier.IsConditionMet(15.0, 12.0);
+            result = modifier.IsConditionMet(12.0, 15.0);
 
             // Assert
             Assert.IsFalse(result);
@@ -149,8 +149,8 @@
             var modifier = new LessThanEqualToModifier();
 
             // Act
-            result1 = modifier.IsConditionMet("bar", "foo");
-            result2 = modifier.IsConditionMet("bar", "bar");
+            result1 = modifier.IsConditionMet("foo", "bar");
+            result2 = modifier.IsConditionMet("foo", "foo");
 
             // Assert
             Assert.IsTrue(result1, "LessThan failed.");
@@ -165,7 +165,7 @@
             var modifier = new LessThanEqualToModifier();
 
             // Act
-            result = modifier.IsConditionMet("foo", "bar");
+            result = modifier.IsConditionMet("bar", "foo");
 
             // Assert
             Assert.IsFalse(result);
@@ -193,8 +193,8 @@
             var modifier = new LessThanEqualToModifier();
 
             // Act
-            result1 = modifier.IsConditionMet(DateTime.MinValue, DateTime.MaxValue);
-            result2 = modifier.IsConditionMet(DateTime.MinValue, DateTime.MinValue);
+            result1 = modifier.IsConditionMet(DateTime.MaxValue, DateTime.MinValue);
+            result2 = modifier.IsConditionMet(DateTime.MaxValue, DateTime.MaxValue);
 
             // Assert
             Assert.IsTrue(result1, "LessThan failed.");
@@ -209,7 +209,7 @@
             var modifier = new LessThanEqualToModifier();
 
             // Act
-            result = modifier.IsConditionMet(DateTime.MaxValue, DateTime.MinValue);
+            result = modifier.IsConditionMet(DateTime.MinValue, DateTime.MaxValue);
 
             // Assert
             Assert.IsFalse(result);
@@ -237,8 +237,8 @@
             var modifier = new LessThanEqualToModifier();
 
             // Act
-            result1 = modifier.IsConditionMet(new CustomIComparableImplementation(5), new CustomIComparableImplementation(15));
-            result2 = modifier.IsConditionMet(new CustomIComparableImplementation(5), new CustomIComparableImplementation(5));
+            result1 = modifier.IsConditionMet(new CustomIComparableImplementation(15), new CustomIComparableImplementation(5));
+            result2 = modifier.IsConditionMet(new CustomIComparableImplementation(15), new CustomIComparableImplementation(15));
 
             // Assert
             Assert.IsTrue(result1, "LessThan failed.");
@@ -253,7 +253,7 @@
             var modifier = new LessThanEqualToModifier();
 
             // Act
-            result = modifier.IsConditionMet(new CustomIComparableImplementation(15), new CustomIComparableImplementation(5));
+            result = modifier.IsConditionMet(new CustomIComparableImplementation(5), new CustomIComparableImplementation(15));
 
             // Assert
             Assert.IsFalse(result);
@@ -266,7 +266,7 @@
             var modifier = new LessThanEqualToModifier();
 
             // Act
-            Action action = () => modifier.IsConditionMet("foo", new CustomIComparableImplementation(15));
+            Action action = () => modifier.IsConditionMet(DateTime.Now, new CustomIComparableImplementation(15));
 
             // Assert
             Assert.ThrowsException<ArgumentException>(action);

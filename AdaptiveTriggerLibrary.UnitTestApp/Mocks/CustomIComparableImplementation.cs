@@ -14,9 +14,10 @@
         public int CompareTo(object obj)
         {
             var other = obj as CustomIComparableImplementation;
-            return other == null
-                ? 1
-                : Value.CompareTo(other.Value);
+            if (other == null)
+                throw new ArgumentException("Object must be of type CustomIComparableImplementation.");
+
+            return Value.CompareTo(other.Value);
         }
     }
 }
