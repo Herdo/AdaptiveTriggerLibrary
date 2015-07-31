@@ -6,6 +6,7 @@
     [TestClass]
     public class DeviceFamilyTriggerTest
     {
+        // This test will currently fail, due to the test requests UITestMethod attribute, which is not available
         [TestMethod]
         public void IsActive_Ok()
         {
