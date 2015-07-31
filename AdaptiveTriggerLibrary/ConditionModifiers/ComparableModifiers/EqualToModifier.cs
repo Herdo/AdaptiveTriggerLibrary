@@ -5,7 +5,7 @@
     public class EqualToModifier : IComparableModifier
     {
         ///////////////////////////////////////////////////////////////////
-        #region IConditionModifier<IComparable> Members
+        #region IComparableModifier Members
 
         public bool IsConditionMet(IComparable value, IComparable condition)
         {
