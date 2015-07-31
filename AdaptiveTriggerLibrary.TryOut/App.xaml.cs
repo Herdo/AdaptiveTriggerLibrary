@@ -15,7 +15,7 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-namespace AdaptiveTriggerLibrary.UnitTestApp
+namespace AdaptiveTriggerLibrary.TryOut
 {
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
@@ -67,12 +67,15 @@ namespace AdaptiveTriggerLibrary.UnitTestApp
                 Window.Current.Content = rootFrame;
             }
 
-            Microsoft.VisualStudio.TestPlatform.TestExecutor.UnitTestClient.CreateDefaultUI();
-
+            if (rootFrame.Content == null)
+            {
+                // When the navigation stack isn't restored navigate to the first page,
+                // configuring the new page by passing required information as a navigation
+                // parameter
+                rootFrame.Navigate(typeof(MainPage), e.Arguments);
+            }
             // Ensure the current window is active
             Window.Current.Activate();
-
-            Microsoft.VisualStudio.TestPlatform.TestExecutor.UnitTestClient.Run(e.Arguments);
         }
 
         /// <summary>

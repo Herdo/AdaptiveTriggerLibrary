@@ -2,6 +2,8 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Collections.ObjectModel;
+    using System.Collections.Specialized;
     using System.Linq;
     using ConditionModifiers.LogicalModifiers;
 
@@ -14,7 +16,7 @@
         ///////////////////////////////////////////////////////////////////
         #region Fields
 
-        private IList<IAdaptiveTrigger> _triggers;
+        private ObservableCollection<IAdaptiveTrigger> _triggers;
 
         #endregion
 
@@ -24,18 +26,24 @@
         /// <summary>
         /// Gets or sets the triggers.
         /// </summary>
-        public IList<IAdaptiveTrigger> Triggers
+        public ObservableCollection<IAdaptiveTrigger> Triggers
         {
             get { return _triggers; }
             set
             {
                 if (_triggers != null)
+                {
+                    _triggers.CollectionChanged -= Triggers_CollectionChanged;
                     foreach (var trigger in _triggers)
                         trigger.IsActiveChanged -= Trigger_IsActiveChanged;
+                }
                 _triggers = value;
                 if (_triggers != null)
+                {
+                    _triggers.CollectionChanged += Triggers_CollectionChanged;
                     foreach (var trigger in _triggers)
                         trigger.IsActiveChanged += Trigger_IsActiveChanged;
+                }
                 CurrentValue = GetCurrentValue();
             }
         }
@@ -53,6 +61,7 @@
         public MultiTrigger()
             : base(true, new AndModifier())
         {
+            Triggers = new ObservableCollection<IAdaptiveTrigger>();
         }
 
         #endregion
@@ -74,6 +83,11 @@
 
         ///////////////////////////////////////////////////////////////////
         #region Event Handler
+
+        private void Triggers_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
+        {
+            CurrentValue = GetCurrentValue();
+        }
 
         private void Trigger_IsActiveChanged(object sender, EventArgs e)
         {

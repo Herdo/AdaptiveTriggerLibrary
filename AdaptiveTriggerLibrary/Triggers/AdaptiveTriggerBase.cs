@@ -16,6 +16,7 @@
         ///////////////////////////////////////////////////////////////////
         #region Fields
 
+        private readonly bool _initialConditionProvided;
         private bool _isConditionSet;
         private bool _isConditionModifierSet;
         private bool _isCurrentValueSet;
@@ -56,6 +57,7 @@
         /// <param name="defaultModifier">The default modifier.</param>
         protected AdaptiveTriggerBase(TConditionModifier defaultModifier)
         {
+            _initialConditionProvided = false;
             _isActive = false;
             _condition = default(TCondition);
             _conditionModifier = defaultModifier;
@@ -73,6 +75,7 @@
             : this(defaultModifier)
         {
             _condition = defaultCondition;
+            _initialConditionProvided = true;
         }
 
         #endregion
@@ -82,7 +85,7 @@
 
         private void ValidateIfActive()
         {
-            if (!_isConditionSet
+            if ((!_initialConditionProvided && !_isConditionSet)
              || !_isCurrentValueSet)
                 return;
 
