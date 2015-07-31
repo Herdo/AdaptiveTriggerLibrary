@@ -11,7 +11,7 @@
         {
             return ReferenceEquals(value, condition)
                 || Equals(value, condition)
-                || value.CompareTo(condition) > 0;
+                || value.CompareTo(condition) >= 0;
         }
 
         #endregion
