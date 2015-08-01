@@ -1,5 +1,6 @@
 ﻿namespace AdaptiveTriggerLibrary.Triggers.HardwareInterfaceTriggers
 {
+    using Windows.ApplicationModel.Resources.Core;
     using ConditionModifiers.ComparableModifiers;
 
     /// <summary>
@@ -29,9 +30,7 @@
 
         private static string GetCurrentValue()
         {
-            var qualifiers = Windows.ApplicationModel.Resources
-                                    .Core.ResourceContext
-                                    .GetForCurrentView().QualifierValues;
+            var qualifiers = ResourceContext.GetForCurrentView().QualifierValues;
             return qualifiers.ContainsKey("DeviceFamily")
                 ? qualifiers["DeviceFamily"]
                 : null;
