@@ -149,6 +149,7 @@
     <Compile Include="Triggers\UserInteractionTriggers\InteractionModeTrigger.cs" />
     <Compile Include="Triggers\UserInterfaceTriggers\ControlWidthTrigger.cs" />
     <Compile Include="Triggers\UserInterfaceTriggers\ControlHeightTrigger.cs" />
+    <Compile Include="Triggers\UserInterfaceTriggers\ScaleTrigger.cs" />
     <Compile Include="Triggers\UserInterfaceTriggers\OrientationTrigger.cs" />
     <Content Include="Properties\AdaptiveTriggerLibrary.rd.xml" />
   </ItemGroup>
