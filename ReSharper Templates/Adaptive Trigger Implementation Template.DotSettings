@@ -19,6 +19,12 @@
         public $CLASS$()&#xD;
             : base(new $DEFAULT_MODIFIER$())&#xD;
         {&#xD;
+            // Subscribe to state changed events, use WeakEvent.Subscribe for UI events&#xD;
+            // Create a weak subscription to the UI event so that we don't pin the trigger or page in memory&#xD;
+            // WeakEvent.Subscribe&lt;&gt;(, nameof(), );&#xD;
+&#xD;
+            // Set initial value&#xD;
+            CurrentValue = GetCurrentValue();&#xD;
         }&#xD;
 &#xD;
         #endregion&#xD;
