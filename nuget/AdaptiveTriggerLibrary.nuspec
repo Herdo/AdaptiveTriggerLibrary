@@ -15,11 +15,13 @@
     </metadata>
 
     <files>
-      <file target="lib\uap10.0\AdaptiveTriggerLibrary.dll"           src="$bin$\x86\Release\AdaptiveTriggerLibrary.dll" />
-      <file target="lib\uap10.0\AdaptiveTriggerLibrary.xml"           src="$bin$\Release\AdaptiveTriggerLibrary.xml" />
+      <file target="lib\uap10.0\AdaptiveTriggerLibrary.dll"                   src="$bin$\Release\AdaptiveTriggerLibrary.dll" />
+      <file target="lib\uap10.0\AdaptiveTriggerLibrary.xml"                   src="$bin$\Release\AdaptiveTriggerLibrary.xml" />
 
-      <file target="runtimes\win10-arm\AdaptiveTriggerLibrary.dll" 		src="$bin$\ARM\Release\AdaptiveTriggerLibrary.dll" />
-      <file target="runtimes\win10-x64\AdaptiveTriggerLibrary.dll" 		src="$bin$\x64\Release\AdaptiveTriggerLibrary.dll" />
-      <file target="runtimes\win10-x86\AdaptiveTriggerLibrary.dll" 		src="$bin$\x86\Release\AdaptiveTriggerLibrary.dll" />
+      <file target="build\uap10.0\AdaptiveTriggerLibrary.targets"             src="AdaptiveTriggerLibrary\nuget\AdaptiveTriggerLibrary.targets" />
+
+      <file target="build\ARM\AdaptiveTriggerLibrary.dll" 		                src="$bin$\ARM\Release\AdaptiveTriggerLibrary.dll" />
+      <file target="build\x64\AdaptiveTriggerLibrary.dll" 		                src="$bin$\x64\Release\AdaptiveTriggerLibrary.dll" />
+      <file target="build\x86\AdaptiveTriggerLibrary.dll" 		                src="$bin$\x86\Release\AdaptiveTriggerLibrary.dll" />
     </files>
 </package>

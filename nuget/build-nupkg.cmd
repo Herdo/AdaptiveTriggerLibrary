@@ -34,7 +34,7 @@ SET NUGET_ARGS=^
     -version %VERSION% ^
     -properties bin=%BIN%;LicenseUrl=%LICENSE_URL%;RequireLicenseAcceptance=%REQUIRE_LICENSE_ACCEPTANCE%
 
-nuget pack AdaptiveTriggerLibrary.uwp.nuspec %NUGET_ARGS%
+nuget pack AdaptiveTriggerLibrary.nuspec %NUGET_ARGS%
 IF %ERRORLEVEL% NEQ 0 GOTO END
 
 :END

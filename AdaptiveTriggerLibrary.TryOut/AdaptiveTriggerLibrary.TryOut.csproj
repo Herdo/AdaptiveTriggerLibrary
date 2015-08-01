@@ -129,7 +129,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\AdaptiveTriggerLibrary\AdaptiveTriggerLibrary.csproj">
-      <Project>{79F7715D-5F67-4AAD-850C-538EBABD2C53}</Project>
+      <Project>{79f7715d-5f67-4aad-850c-538ebabd2c53}</Project>
       <Name>AdaptiveTriggerLibrary</Name>
     </ProjectReference>
   </ItemGroup>
