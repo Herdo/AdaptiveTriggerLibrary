@@ -67,6 +67,30 @@
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
+
+            <!-- Color Overrides -->
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <userInterfaceTriggers:ControlWidthTrigger x:Name="HorizontalRectangleFillTrigger"
+                                                                    Condition="550"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="HorizontalRectangle.Fill"
+                                Value="Green"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <userInterfaceTriggers:ControlHeightTrigger x:Name="VerticalRectangleFillTrigger"
+                                                                    Condition="400"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="VerticalRectangle.Fill"
+                                Value="Orange"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
         
         <TextBlock x:Name="SupportedTextBlock"
@@ -78,18 +102,18 @@
         
         <Rectangle Grid.Row="1"
                    x:Name="HorizontalRectangle"
-                   HorizontalAlignment="Center"
+                   HorizontalAlignment="Stretch"
                    VerticalAlignment="Center"
-                   Width="300"
+                   Margin="25"
                    Height="100"
                    Fill="Red"
                    Visibility="Collapsed"/>
         <Rectangle Grid.Row="1"
                    x:Name="VerticalRectangle"
                    HorizontalAlignment="Center"
-                   VerticalAlignment="Center"
+                   VerticalAlignment="Stretch"
                    Width="100"
-                   Height="300"
+                   Margin="25"
                    Fill="Blue"
                    Visibility="Collapsed"/>
     </Grid>

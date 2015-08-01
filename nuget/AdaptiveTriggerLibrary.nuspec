@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-    <metadata minClientVersion="2.8.6">
+    <metadata minClientVersion="3.1">
         <id>AdaptiveTriggerLibrary</id>
         <version>0.0.0-SpecifyVersionOnCommandline</version>
         <title>Adaptive Trigger Library for the Universal Windows Platform (Windows 10)</title>
@@ -20,8 +20,8 @@
 
       <file target="build\uap10.0\AdaptiveTriggerLibrary.targets"             src="AdaptiveTriggerLibrary\nuget\AdaptiveTriggerLibrary.targets" />
 
-      <file target="build\ARM\AdaptiveTriggerLibrary.dll" 		                src="$bin$\ARM\Release\AdaptiveTriggerLibrary.dll" />
-      <file target="build\x64\AdaptiveTriggerLibrary.dll" 		                src="$bin$\x64\Release\AdaptiveTriggerLibrary.dll" />
-      <file target="build\x86\AdaptiveTriggerLibrary.dll" 		                src="$bin$\x86\Release\AdaptiveTriggerLibrary.dll" />
+      <file target="runtimes\win10-arm\lib\uap10.0\AdaptiveTriggerLibrary.dll" 		src="$bin$\ARM\Release\AdaptiveTriggerLibrary.dll" />
+      <file target="runtimes\win10-x64\lib\uap10.0\AdaptiveTriggerLibrary.dll" 		src="$bin$\x64\Release\AdaptiveTriggerLibrary.dll" />
+      <file target="runtimes\win10-x86\lib\uap10.0\AdaptiveTriggerLibrary.dll" 		src="$bin$\x86\Release\AdaptiveTriggerLibrary.dll" />
     </files>
 </package>

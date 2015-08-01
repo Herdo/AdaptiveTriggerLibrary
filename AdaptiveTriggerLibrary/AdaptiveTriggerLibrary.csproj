@@ -147,6 +147,8 @@
     <Compile Include="Triggers\SoftwareInterfaceTriggers\ApiInformationTrigger.cs" />
     <Compile Include="Triggers\UserInteractionTriggers\InputTypeTrigger.cs" />
     <Compile Include="Triggers\UserInteractionTriggers\InteractionModeTrigger.cs" />
+    <Compile Include="Triggers\UserInterfaceTriggers\ControlWidthTrigger.cs" />
+    <Compile Include="Triggers\UserInterfaceTriggers\ControlHeightTrigger.cs" />
     <Compile Include="Triggers\UserInterfaceTriggers\OrientationTrigger.cs" />
     <Content Include="Properties\AdaptiveTriggerLibrary.rd.xml" />
   </ItemGroup>

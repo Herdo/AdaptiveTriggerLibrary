@@ -25,6 +25,10 @@ namespace AdaptiveTriggerLibrary.TryOut
         public MainPage()
         {
             this.InitializeComponent();
+
+            // Set target elements
+            HorizontalRectangleFillTrigger.TargetElement = HorizontalRectangle;
+            VerticalRectangleFillTrigger.TargetElement = VerticalRectangle;
         }
     }
 }
