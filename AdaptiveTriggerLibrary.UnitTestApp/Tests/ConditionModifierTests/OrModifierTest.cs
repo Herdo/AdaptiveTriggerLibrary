@@ -1,5 +1,6 @@
 ﻿namespace AdaptiveTriggerLibrary.UnitTestApp.Tests.ConditionModifierTests
 {
+    using ConditionModifiers;
     using ConditionModifiers.LogicalModifiers;
     using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 
@@ -11,7 +12,7 @@
         {
             // Arrange
             bool result;
-            var modifier = new OrModifier();
+            IConditionModifier modifier = new OrModifier();
 
             // Act
             result = modifier.IsConditionMet(true, true);
@@ -26,7 +27,7 @@
             // Arrange
             bool result;
             var inputs = new[] { true, true, true };
-            var modifier = new OrModifier();
+            IConditionModifier modifier = new OrModifier();
 
             // Act
             result = modifier.IsConditionMet(true, inputs);
@@ -40,7 +41,7 @@
         {
             // Arrange
             bool result;
-            var modifier = new OrModifier();
+            IConditionModifier modifier = new OrModifier();
 
             // Act
             result = modifier.IsConditionMet(true, null);
@@ -54,7 +55,7 @@
         {
             // Arrange
             bool result;
-            var modifier = new OrModifier();
+            IConditionModifier modifier = new OrModifier();
 
             // Act
             result = modifier.IsConditionMet(true, false);
@@ -69,7 +70,7 @@
             // Arrange
             bool result;
             var inputs = new[] { true, false, true };
-            var modifier = new OrModifier();
+            IConditionModifier modifier = new OrModifier();
 
             // Act
             result = modifier.IsConditionMet(true, inputs);

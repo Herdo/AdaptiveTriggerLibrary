@@ -1,6 +1,7 @@
 ﻿namespace AdaptiveTriggerLibrary.UnitTestApp.Tests.ConditionModifierTests
 {
     using Windows.UI.ViewManagement;
+    using ConditionModifiers;
     using ConditionModifiers.GenericModifiers;
     using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
 
@@ -12,7 +13,7 @@
         {
             // Arrange
             bool result;
-            var modifier = new EqualsModifier<UserInteractionMode>();
+            IConditionModifier modifier = new EqualsModifier<UserInteractionMode>();
 
             // Act
             result = modifier.IsConditionMet(UserInteractionMode.Mouse, UserInteractionMode.Mouse);
@@ -26,7 +27,7 @@
         {
             // Arrange
             bool result;
-            var modifier = new EqualsModifier<UserInteractionMode>();
+            IConditionModifier modifier = new EqualsModifier<UserInteractionMode>();
 
             // Act
             result = modifier.IsConditionMet(UserInteractionMode.Mouse, UserInteractionMode.Touch);

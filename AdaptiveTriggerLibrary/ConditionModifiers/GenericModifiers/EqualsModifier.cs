@@ -31,7 +31,7 @@
         /// <exception cref="ArgumentException">The underlying types of <paramref name="condition"/> and <paramref name="values"/> doesn't match.</exception>
         /// <exception cref="InvalidCastException">Either <paramref name="condition"/> or an element in the sequence of <paramref name="values"/> cannot be casted to the underlying type.</exception>
         /// <returns>True, if the <paramref name="values"/> meets the specified <paramref name="condition"/>, otherwise false.</returns>
-        public bool IsConditionMet(object condition, params object[] values)
+        bool IConditionModifier.IsConditionMet(object condition, params object[] values)
         {
             return IsConditionMet((T) condition, values?.Cast<T>().ToArray());
         }

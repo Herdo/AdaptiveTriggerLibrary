@@ -1,6 +1,7 @@
 ﻿namespace AdaptiveTriggerLibrary.UnitTestApp.Tests.ConditionModifierTests
 {
     using System;
+    using ConditionModifiers;
     using ConditionModifiers.ComparableModifiers;
     using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
     using Mocks;
@@ -14,7 +15,7 @@
             // Arrange
             bool result1;
             bool result2;
-            var modifier = new GreaterThanEqualToModifier();
+            IConditionModifier modifier = new GreaterThanEqualToModifier();
 
             // Act
             result1 = modifier.IsConditionMet(false, true);
@@ -30,7 +31,7 @@
         {
             // Arrange
             bool result;
-            var modifier = new GreaterThanEqualToModifier();
+            IConditionModifier modifier = new GreaterThanEqualToModifier();
 
             // Act
             result = modifier.IsConditionMet(true, false);
@@ -43,7 +44,7 @@
         public void GreaterThanEqualTo_Bool_InvalidType_ArgumentTypeMismatch()
         {
             // Arrange
-            var modifier = new GreaterThanEqualToModifier();
+            IConditionModifier modifier = new GreaterThanEqualToModifier();
 
             // Act
             Action action = () => modifier.IsConditionMet("foo", false);
@@ -58,7 +59,7 @@
             // Arrange
             bool result1;
             bool result2;
-            var modifier = new GreaterThanEqualToModifier();
+            IConditionModifier modifier = new GreaterThanEqualToModifier();
 
             // Act
             result1 = modifier.IsConditionMet(12, 15);
@@ -74,7 +75,7 @@
         {
             // Arrange
             bool result;
-            var modifier = new GreaterThanEqualToModifier();
+            IConditionModifier modifier = new GreaterThanEqualToModifier();
 
             // Act
             result = modifier.IsConditionMet(15, 12);
@@ -87,7 +88,7 @@
         public void GreaterThanEqualTo_Int32_InvalidType_ArgumentTypeMismatch()
         {
             // Arrange
-            var modifier = new GreaterThanEqualToModifier();
+            IConditionModifier modifier = new GreaterThanEqualToModifier();
 
             // Act
             Action action = () => modifier.IsConditionMet("foo", 15);
@@ -102,7 +103,7 @@
             // Arrange
             bool result1;
             bool result2;
-            var modifier = new GreaterThanEqualToModifier();
+            IConditionModifier modifier = new GreaterThanEqualToModifier();
 
             // Act
             result1 = modifier.IsConditionMet(12.0, 15.0);
@@ -118,7 +119,7 @@
         {
             // Arrange
             bool result;
-            var modifier = new GreaterThanEqualToModifier();
+            IConditionModifier modifier = new GreaterThanEqualToModifier();
 
             // Act
             result = modifier.IsConditionMet(15.0, 12.0);
@@ -131,7 +132,7 @@
         public void GreaterThanEqualTo_Double_InvalidType_ArgumentTypeMismatch()
         {
             // Arrange
-            var modifier = new GreaterThanEqualToModifier();
+            IConditionModifier modifier = new GreaterThanEqualToModifier();
 
             // Act
             Action action = () => modifier.IsConditionMet("foo", 15.0);
@@ -146,7 +147,7 @@
             // Arrange
             bool result1;
             bool result2;
-            var modifier = new GreaterThanEqualToModifier();
+            IConditionModifier modifier = new GreaterThanEqualToModifier();
 
             // Act
             result1 = modifier.IsConditionMet("bar", "foo");
@@ -162,7 +163,7 @@
         {
             // Arrange
             bool result;
-            var modifier = new GreaterThanEqualToModifier();
+            IConditionModifier modifier = new GreaterThanEqualToModifier();
 
             // Act
             result = modifier.IsConditionMet("foo", "bar");
@@ -175,7 +176,7 @@
         public void GreaterThanEqualTo_String_InvalidType_ArgumentTypeMismatch()
         {
             // Arrange
-            var modifier = new GreaterThanEqualToModifier();
+            IConditionModifier modifier = new GreaterThanEqualToModifier();
 
             // Act
             Action action = () => modifier.IsConditionMet(42, "bar");
@@ -190,7 +191,7 @@
             // Arrange
             bool result1;
             bool result2;
-            var modifier = new GreaterThanEqualToModifier();
+            IConditionModifier modifier = new GreaterThanEqualToModifier();
 
             // Act
             result1 = modifier.IsConditionMet(DateTime.MinValue, DateTime.MaxValue);
@@ -206,7 +207,7 @@
         {
             // Arrange
             bool result;
-            var modifier = new GreaterThanEqualToModifier();
+            IConditionModifier modifier = new GreaterThanEqualToModifier();
 
             // Act
             result = modifier.IsConditionMet(DateTime.MaxValue, DateTime.MinValue);
@@ -219,7 +220,7 @@
         public void GreaterThanEqualTo_DateTime_InvalidType_ArgumentTypeMismatch()
         {
             // Arrange
-            var modifier = new GreaterThanEqualToModifier();
+            IConditionModifier modifier = new GreaterThanEqualToModifier();
 
             // Act
             Action action = () => modifier.IsConditionMet("foo", DateTime.MinValue);
@@ -234,7 +235,7 @@
             // Arrange
             bool result1;
             bool result2;
-            var modifier = new GreaterThanEqualToModifier();
+            IConditionModifier modifier = new GreaterThanEqualToModifier();
 
             // Act
             result1 = modifier.IsConditionMet(new CustomIComparableImplementation(5), new CustomIComparableImplementation(15));
@@ -250,7 +251,7 @@
         {
             // Arrange
             bool result;
-            var modifier = new GreaterThanEqualToModifier();
+            IConditionModifier modifier = new GreaterThanEqualToModifier();
 
             // Act
             result = modifier.IsConditionMet(new CustomIComparableImplementation(15), new CustomIComparableImplementation(12));
@@ -263,7 +264,7 @@
         public void GreaterThanEqualTo_CustomIComparableImplementation_InvalidType_ArgumentTypeMismatch()
         {
             // Arrange
-            var modifier = new GreaterThanEqualToModifier();
+            IConditionModifier modifier = new GreaterThanEqualToModifier();
 
             // Act
             Action action = () => modifier.IsConditionMet("foo", new CustomIComparableImplementation(15));

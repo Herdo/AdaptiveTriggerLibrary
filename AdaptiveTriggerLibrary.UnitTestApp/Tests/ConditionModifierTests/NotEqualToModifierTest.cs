@@ -1,6 +1,7 @@
 ﻿namespace AdaptiveTriggerLibrary.UnitTestApp.Tests.ConditionModifierTests
 {
     using System;
+    using ConditionModifiers;
     using ConditionModifiers.ComparableModifiers;
     using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
     using Mocks;
@@ -13,7 +14,7 @@
         {
             // Arrange
             bool result;
-            var modifier = new NotEqualToModifier();
+            IConditionModifier modifier = new NotEqualToModifier();
 
             // Act
             result = modifier.IsConditionMet(true, false);
@@ -27,7 +28,7 @@
         {
             // Arrange
             bool result;
-            var modifier = new NotEqualToModifier();
+            IConditionModifier modifier = new NotEqualToModifier();
 
             // Act
             result = modifier.IsConditionMet(false, false);
@@ -40,7 +41,7 @@
         public void NotEquals_Bool_InvalidType_ArgumentTypeMismatch()
         {
             // Arrange
-            var modifier = new NotEqualToModifier();
+            IConditionModifier modifier = new NotEqualToModifier();
 
             // Act
             Action action = () => modifier.IsConditionMet("foo", false);
@@ -54,7 +55,7 @@
         {
             // Arrange
             bool result;
-            var modifier = new NotEqualToModifier();
+            IConditionModifier modifier = new NotEqualToModifier();
 
             // Act
             result = modifier.IsConditionMet(12, 15);
@@ -68,7 +69,7 @@
         {
             // Arrange
             bool result;
-            var modifier = new NotEqualToModifier();
+            IConditionModifier modifier = new NotEqualToModifier();
 
             // Act
             result = modifier.IsConditionMet(15, 15);
@@ -81,7 +82,7 @@
         public void NotEquals_Int32_InvalidType_ArgumentTypeMismatch()
         {
             // Arrange
-            var modifier = new NotEqualToModifier();
+            IConditionModifier modifier = new NotEqualToModifier();
 
             // Act
             Action action = () => modifier.IsConditionMet("foo", 15);
@@ -95,7 +96,7 @@
         {
             // Arrange
             bool result;
-            var modifier = new NotEqualToModifier();
+            IConditionModifier modifier = new NotEqualToModifier();
 
             // Act
             result = modifier.IsConditionMet(12.0, 15.0);
@@ -109,7 +110,7 @@
         {
             // Arrange
             bool result;
-            var modifier = new NotEqualToModifier();
+            IConditionModifier modifier = new NotEqualToModifier();
 
             // Act
             result = modifier.IsConditionMet(15.0, 15.0);
@@ -122,7 +123,7 @@
         public void NotEquals_Double_InvalidType_ArgumentTypeMismatch()
         {
             // Arrange
-            var modifier = new NotEqualToModifier();
+            IConditionModifier modifier = new NotEqualToModifier();
 
             // Act
             Action action = () => modifier.IsConditionMet("foo", 15.0);
@@ -136,7 +137,7 @@
         {
             // Arrange
             bool result;
-            var modifier = new NotEqualToModifier();
+            IConditionModifier modifier = new NotEqualToModifier();
 
             // Act
             result = modifier.IsConditionMet("foo", "bar");
@@ -150,7 +151,7 @@
         {
             // Arrange
             bool result;
-            var modifier = new NotEqualToModifier();
+            IConditionModifier modifier = new NotEqualToModifier();
 
             // Act
             result = modifier.IsConditionMet("bar", "bar");
@@ -163,7 +164,7 @@
         public void NotEquals_String_InvalidType_ArgumentTypeMismatch()
         {
             // Arrange
-            var modifier = new NotEqualToModifier();
+            IConditionModifier modifier = new NotEqualToModifier();
 
             // Act
             Action action = () => modifier.IsConditionMet(42, "bar");
@@ -177,7 +178,7 @@
         {
             // Arrange
             bool result;
-            var modifier = new NotEqualToModifier();
+            IConditionModifier modifier = new NotEqualToModifier();
 
             // Act
             result = modifier.IsConditionMet(DateTime.MaxValue, DateTime.MinValue);
@@ -191,7 +192,7 @@
         {
             // Arrange
             bool result;
-            var modifier = new NotEqualToModifier();
+            IConditionModifier modifier = new NotEqualToModifier();
 
             // Act
             result = modifier.IsConditionMet(DateTime.MinValue, DateTime.MinValue);
@@ -204,7 +205,7 @@
         public void NotEquals_DateTime_InvalidType_ArgumentTypeMismatch()
         {
             // Arrange
-            var modifier = new NotEqualToModifier();
+            IConditionModifier modifier = new NotEqualToModifier();
 
             // Act
             Action action = () => modifier.IsConditionMet("foo", DateTime.MinValue);
@@ -218,7 +219,7 @@
         {
             // Arrange
             bool result;
-            var modifier = new NotEqualToModifier();
+            IConditionModifier modifier = new NotEqualToModifier();
 
             // Act
             result = modifier.IsConditionMet(new CustomIComparableImplementation(5), new CustomIComparableImplementation(15));
@@ -232,7 +233,7 @@
         {
             // Arrange
             bool result;
-            var modifier = new NotEqualToModifier();
+            IConditionModifier modifier = new NotEqualToModifier();
 
             // Act
             result = modifier.IsConditionMet(new CustomIComparableImplementation(15), new CustomIComparableImplementation(15));
@@ -245,7 +246,7 @@
         public void NotEquals_CustomIComparableImplementation_InvalidType_ArgumentTypeMismatch()
         {
             // Arrange
-            var modifier = new NotEqualToModifier();
+            IConditionModifier modifier = new NotEqualToModifier();
 
             // Act
             Action action = () => modifier.IsConditionMet("foo", new CustomIComparableImplementation(15));
