@@ -15,7 +15,7 @@
 
         /// <summary>
         /// Initializes a new instance of the <see cref="NetworkConnectionStateTrigger"/> class.
-        /// Default modifier: <see cref="IGenericModifier{NetworkConnectivityLevel}"/>.
+        /// Default modifier: <see cref="EqualsModifier{NetworkConnectivityLevel}"/>.
         /// </summary>
         public NetworkConnectionStateTrigger()
             : base(new EqualsModifier<NetworkConnectivityLevel>())
