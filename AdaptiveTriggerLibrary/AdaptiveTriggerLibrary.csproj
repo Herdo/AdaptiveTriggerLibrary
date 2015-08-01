@@ -136,6 +136,7 @@
     <Compile Include="ConditionModifiers\LogicalModifiers\ILogicalModifier.cs" />
     <Compile Include="ConditionModifiers\LogicalModifiers\OrModifier.cs" />
     <Compile Include="ConditionModifiers\ModifierBase.cs" />
+    <Compile Include="Enums\LayoutDirection.cs" />
     <Compile Include="Functional\WeakEvent.cs" />
     <Compile Include="Triggers\ConnectivityTriggers\NetworkConnectionStateTrigger.cs" />
     <Compile Include="Triggers\IAdaptiveTrigger.cs" />
@@ -149,6 +150,7 @@
     <Compile Include="Triggers\UserInteractionTriggers\InteractionModeTrigger.cs" />
     <Compile Include="Triggers\UserInterfaceTriggers\ControlWidthTrigger.cs" />
     <Compile Include="Triggers\UserInterfaceTriggers\ControlHeightTrigger.cs" />
+    <Compile Include="Triggers\UserInterfaceTriggers\LayoutDirectionTrigger.cs" />
     <Compile Include="Triggers\UserInterfaceTriggers\ScaleTrigger.cs" />
     <Compile Include="Triggers\UserInterfaceTriggers\OrientationTrigger.cs" />
     <Content Include="Properties\AdaptiveTriggerLibrary.rd.xml" />
