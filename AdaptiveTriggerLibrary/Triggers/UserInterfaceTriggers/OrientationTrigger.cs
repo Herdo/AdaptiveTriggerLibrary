@@ -25,6 +25,7 @@
             // Create a weak subscription to the SizeChanged event so that we don't pin the trigger or page in memory
             WeakEvent.Subscribe<WindowSizeChangedEventHandler>(Window.Current, nameof(Window.Current.SizeChanged), MainWindow_SizeChanged);
 
+            // Set initial value
             CurrentValue = GetCurrentValue();
         }
 

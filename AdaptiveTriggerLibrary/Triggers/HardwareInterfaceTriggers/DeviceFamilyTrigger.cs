@@ -18,6 +18,7 @@
         public DeviceFamilyTrigger()
             : base(new EqualToModifier())
         {
+            // Set initial value
             CurrentValue = GetCurrentValue();
         }
 
