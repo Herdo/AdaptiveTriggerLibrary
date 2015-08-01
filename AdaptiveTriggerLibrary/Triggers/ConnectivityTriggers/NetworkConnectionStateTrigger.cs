@@ -10,7 +10,6 @@
     public class NetworkConnectionStateTrigger : AdaptiveTriggerBase<NetworkConnectivityLevel, IGenericModifier<NetworkConnectivityLevel>>
     {
         ///////////////////////////////////////////////////////////////////
-
         #region Constructors
 
         /// <summary>
@@ -30,7 +29,6 @@
         #endregion
 
         ///////////////////////////////////////////////////////////////////
-
         #region Private Methods
 
         private NetworkConnectivityLevel GetCurrentValue()
