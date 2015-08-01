@@ -15,8 +15,8 @@
     </metadata>
 
     <files>
-      <file target="lib\uap10.0\AdaptiveTriggerLibrary.dll"             src="$bin$\x86\Release\AdaptiveTriggerLibrary.dll" />
-      <file target="lib\uap10.0\AdaptiveTriggerLibrary.xml"             src="$bin$\Release\AdaptiveTriggerLibrary.xml" />
+      <file target="lib\uap10.0\AdaptiveTriggerLibrary.dll"           src="$bin$\x86\Release\AdaptiveTriggerLibrary.dll" />
+      <file target="lib\uap10.0\AdaptiveTriggerLibrary.xml"           src="$bin$\Release\AdaptiveTriggerLibrary.xml" />
 
       <file target="runtimes\win10-arm\AdaptiveTriggerLibrary.dll" 		src="$bin$\ARM\Release\AdaptiveTriggerLibrary.dll" />
       <file target="runtimes\win10-x64\AdaptiveTriggerLibrary.dll" 		src="$bin$\x64\Release\AdaptiveTriggerLibrary.dll" />

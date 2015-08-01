@@ -97,8 +97,14 @@
         ///////////////////////////////////////////////////////////////////
         #region IAdaptiveTrigger<TCondition, TConditionModifier> Members
 
+        /// <summary>
+        /// Occurs when the value of <see cref="IAdaptiveTrigger.IsActive"/> changed.
+        /// </summary>
         public event EventHandler IsActiveChanged;
 
+        /// <summary>
+        /// Gets if the trigger is currently active.
+        /// </summary>
         public bool IsActive
         {
             get { return _isActive; }
@@ -111,6 +117,11 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the condition that must be met, in order to set <see cref="IAdaptiveTrigger.IsActive"/> to true.
+        /// </summary>
+        /// <remarks>This property can only be set once.</remarks>
+        /// <exception cref="InvalidOperationException"><see cref="IAdaptiveTrigger{TCondition,TConditionModifier}.Condition"/> is set more than once.</exception>
         public TCondition Condition
         {
             get { return _condition; }
@@ -124,6 +135,12 @@
             }
         }
 
+        /// <summary>
+        /// Gets or sets the modifier that will be applied to the validation of the <see cref="IAdaptiveTrigger{TCondition,TConditionModifier}.Condition"/>.
+        /// </summary>
+        /// <remarks>This property can only be set once.
+        /// If no condition modifier is specified, the default modifier for the <typeparamref name="TConditionModifier"/> will be used.</remarks>
+        /// <exception cref="InvalidOperationException"><see cref="IAdaptiveTrigger{TCondition,TConditionModifier}.ConditionModifier"/> is set more than once.</exception>
         public TConditionModifier ConditionModifier
         {
             get { return _conditionModifier; }
