@@ -14,10 +14,11 @@
 
         /// <summary>
         /// Initializes a new instance of the <see cref="NetworkConnectionStateTrigger"/> class.
+        /// Default condition: <see cref="NetworkConnectivityLevel.InternetAccess"/>.
         /// Default modifier: <see cref="EqualsModifier{NetworkConnectivityLevel}"/>.
         /// </summary>
         public NetworkConnectionStateTrigger()
-            : base(new EqualsModifier<NetworkConnectivityLevel>())
+            : base(NetworkConnectivityLevel.InternetAccess, new EqualsModifier<NetworkConnectivityLevel>())
         {
             // Subscribe to state changed event
             NetworkInformation.NetworkStatusChanged += NetworkInformation_NetworkStatusChanged;

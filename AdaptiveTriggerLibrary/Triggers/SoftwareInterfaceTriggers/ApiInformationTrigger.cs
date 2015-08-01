@@ -102,10 +102,11 @@
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiInformationTrigger"/> class.
+        /// Default condition: true.
         /// Default modifier: <see cref="EqualsModifier{Boolean}"/>.
         /// </summary>
         public ApiInformationTrigger()
-            : base(new EqualsModifier<bool>())
+            : base(true, new EqualsModifier<bool>())
         {
             _contractMajorVersion = 1;
             _contractMinorVersion = null;
