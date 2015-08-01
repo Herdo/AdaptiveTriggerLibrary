@@ -136,20 +136,20 @@
     <Compile Include="ConditionModifiers\LogicalModifiers\ILogicalModifier.cs" />
     <Compile Include="ConditionModifiers\LogicalModifiers\OrModifier.cs" />
     <Compile Include="Functional\WeakEvent.cs" />
+    <Compile Include="Triggers\ConnectivityTriggers\NetworkConnectionStateTrigger.cs" />
     <Compile Include="Triggers\IAdaptiveTrigger.cs" />
     <Compile Include="ConditionModifiers\IConditionModifier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Triggers\AdaptiveTriggerBase.cs" />
     <Compile Include="Triggers\HardwareInterfaceTriggers\DeviceFamilyTrigger.cs" />
     <Compile Include="Triggers\LogicalTriggers\MultiTrigger.cs" />
+    <Compile Include="Triggers\SoftwareInterfaceTriggers\ApiInformationTrigger.cs" />
+    <Compile Include="Triggers\UserInteractionTriggers\InputTypeTrigger.cs" />
     <Compile Include="Triggers\UserInteractionTriggers\InteractionModeTrigger.cs" />
     <Compile Include="Triggers\UserInterfaceTriggers\OrientationTrigger.cs" />
     <Content Include="Properties\AdaptiveTriggerLibrary.rd.xml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Triggers\ConnectivityTriggers\" />
-    <Folder Include="Triggers\SoftwareInterfaceTriggers\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

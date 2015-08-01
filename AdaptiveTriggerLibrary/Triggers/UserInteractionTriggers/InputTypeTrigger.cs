@@ -24,6 +24,9 @@
         ///////////////////////////////////////////////////////////////////
         #region Properties
 
+        /// <summary>
+        /// Gets or sets the <see cref="FrameworkElement"/> to validate the input type of.
+        /// </summary>
         public FrameworkElement TargetElement
         {
             get { return _targetElement; }
