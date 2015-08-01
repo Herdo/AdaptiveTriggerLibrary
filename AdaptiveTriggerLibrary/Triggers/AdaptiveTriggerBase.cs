@@ -89,7 +89,7 @@
              || !_isCurrentValueSet)
                 return;
 
-            IsActive = ConditionModifier.IsConditionMet(CurrentValue, Condition);
+            IsActive = ConditionModifier.IsConditionMet(Condition, CurrentValue);
         }
 
         #endregion

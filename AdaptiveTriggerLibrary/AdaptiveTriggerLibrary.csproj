@@ -135,6 +135,7 @@
     <Compile Include="ConditionModifiers\LogicalModifiers\AndModifier.cs" />
     <Compile Include="ConditionModifiers\LogicalModifiers\ILogicalModifier.cs" />
     <Compile Include="ConditionModifiers\LogicalModifiers\OrModifier.cs" />
+    <Compile Include="ConditionModifiers\ModifierBase.cs" />
     <Compile Include="Functional\WeakEvent.cs" />
     <Compile Include="Triggers\ConnectivityTriggers\NetworkConnectionStateTrigger.cs" />
     <Compile Include="Triggers\IAdaptiveTrigger.cs" />

@@ -1,5 +1,6 @@
 ﻿namespace AdaptiveTriggerLibrary.UnitTestApp.Tests.ConditionModifierTests
 {
+    using System;
     using ConditionModifiers;
     using ConditionModifiers.LogicalModifiers;
     using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
@@ -8,7 +9,7 @@
     public class OrModifierTest
     {
         [TestMethod]
-        public void AllTrue_Single()
+        public void Or_AllTrue_Single()
         {
             // Arrange
             bool result;
@@ -22,7 +23,7 @@
         }
 
         [TestMethod]
-        public void AllTrue_Multiple()
+        public void Or_AllTrue_Multiple()
         {
             // Arrange
             bool result;
@@ -37,21 +38,20 @@
         }
 
         [TestMethod]
-        public void AllTrue_Null()
+        public void Or_AllTrue_Null()
         {
             // Arrange
-            bool result;
             IConditionModifier modifier = new OrModifier();
 
             // Act
-            result = modifier.IsConditionMet(true, null);
+            Action action = () => modifier.IsConditionMet(true, null);
 
             // Assert
-            Assert.IsFalse(result);
+            Assert.ThrowsException<InvalidCastException>(action);
         }
 
         [TestMethod]
-        public void NotAllTrue_Single()
+        public void Or_NotAllTrue_Single()
         {
             // Arrange
             bool result;
@@ -65,7 +65,7 @@
         }
 
         [TestMethod]
-        public void NotAllTrue_Multiple()
+        public void Or_NotAllTrue_Multiple()
         {
             // Arrange
             bool result;

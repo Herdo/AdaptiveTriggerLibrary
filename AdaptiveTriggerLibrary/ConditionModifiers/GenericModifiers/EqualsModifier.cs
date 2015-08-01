@@ -1,21 +1,20 @@
 ﻿namespace AdaptiveTriggerLibrary.ConditionModifiers.GenericModifiers
 {
     using System;
-    using System.Linq;
 
     /// <summary>
-    /// A modifier where the first value of the values must be equal to the condition.
+    /// A modifier where the value must be equal to the condition.
     /// </summary>
     /// <typeparam name="T">Any <see cref="System.Type"/> derived from <see cref="object"/>.</typeparam>
-    public class EqualsModifier<T> : IGenericModifier
+    public class EqualsModifier<T> : ModifierBase,
+                                     IGenericModifier
     {
         ///////////////////////////////////////////////////////////////////
         #region Private Methods
 
-        private bool IsConditionMet(T condition, params T[] values)
+        private static bool IsConditionMet(T condition, T value)
         {
-            return values.Length >= 1
-                && Equals(condition, values[0]);
+            return Equals(condition, value);
         }
 
         #endregion
@@ -23,19 +22,29 @@
         ///////////////////////////////////////////////////////////////////
         #region IGenericModifier<T> Members
 
+        #endregion
+
         /// <summary>
-        /// Checks if the <paramref name="values"/> meets the specified <paramref name="condition"/>.
+        /// Checks if the <paramref name="value"/> meets the specified <paramref name="condition"/>.
         /// </summary>
         /// <param name="condition">The condition.</param>
-        /// <param name="values">The actual value(s).</param>
-        /// <exception cref="ArgumentException">The underlying types of <paramref name="condition"/> and <paramref name="values"/> doesn't match.</exception>
-        /// <exception cref="InvalidCastException">Either <paramref name="condition"/> or an element in the sequence of <paramref name="values"/> cannot be casted to the underlying type.</exception>
-        /// <returns>True, if the <paramref name="values"/> meets the specified <paramref name="condition"/>, otherwise false.</returns>
-        bool IConditionModifier.IsConditionMet(object condition, params object[] values)
+        /// <param name="value">The actual value.</param>
+        /// <exception cref="ArgumentException">The underlying type of <paramref name="condition"/> doesn't match expected condition type,
+        /// or the underlying type of<paramref name="value"/> doesn't match the expected value type.</exception>
+        /// <exception cref="InvalidCastException">Either <paramref name="condition"/> or <paramref name="value"/> cannot be casted to the specified underlying type.</exception>
+        /// <returns>True, if the <paramref name="value"/> meets the specified <paramref name="condition"/>, otherwise false.</returns>
+        bool IConditionModifier.IsConditionMet(object condition, object value)
         {
-            return IsConditionMet((T) condition, values?.Cast<T>().ToArray());
-        }
+            Tuple<T, T> singleValueParameters;
 
-        #endregion
+            var parsed = TryGetParsedParameters(condition, value, out singleValueParameters);
+
+            // Support single values
+            if (parsed)
+                return IsConditionMet(singleValueParameters.Item1, singleValueParameters.Item2);
+
+            // Cast failed
+            throw new InvalidCastException(InvalidCastMessage);
+        }
     }
 }

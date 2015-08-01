@@ -1,5 +1,7 @@
 ﻿namespace AdaptiveTriggerLibrary.UnitTestApp.Tests.ConditionModifierTests
 {
+    using System;
+    using System.Linq;
     using ConditionModifiers;
     using ConditionModifiers.LogicalModifiers;
     using Microsoft.VisualStudio.TestPlatform.UnitTestFramework;
@@ -8,7 +10,7 @@
     public class AndModifierTest
     {
         [TestMethod]
-        public void AllTrue_Single()
+        public void And_AllTrue_Single()
         {
             // Arrange
             bool result;
@@ -22,7 +24,7 @@
         }
 
         [TestMethod]
-        public void AllTrue_Multiple()
+        public void And_AllTrue_Multiple()
         {
             // Arrange
             bool result;
@@ -30,28 +32,27 @@
             IConditionModifier modifier = new AndModifier();
 
             // Act
-            result = modifier.IsConditionMet(true, inputs);
+            result = modifier.IsConditionMet(true, inputs.ToArray());
 
             // Assert
             Assert.IsTrue(result);
         }
 
         [TestMethod]
-        public void AllTrue_Null()
+        public void And_AllTrue_Null()
         {
             // Arrange
-            bool result;
             IConditionModifier modifier = new AndModifier();
 
             // Act
-            result = modifier.IsConditionMet(true, null);
+            Action action = () => modifier.IsConditionMet(true, null);
 
             // Assert
-            Assert.IsFalse(result);
+            Assert.ThrowsException<InvalidCastException>(action);
         }
 
         [TestMethod]
-        public void NotAllTrue_Single()
+        public void And_NotAllTrue_Single()
         {
             // Arrange
             bool result;
@@ -65,7 +66,7 @@
         }
 
         [TestMethod]
-        public void NotAllTrue_Multiple()
+        public void And_NotAllTrue_Multiple()
         {
             // Arrange
             bool result;
