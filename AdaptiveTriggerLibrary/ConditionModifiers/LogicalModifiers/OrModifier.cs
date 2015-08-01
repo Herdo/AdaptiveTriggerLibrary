@@ -11,7 +11,7 @@
         ///////////////////////////////////////////////////////////////////
         #region Private Methods
 
-        public bool IsConditionMet(bool condition, params bool[] values)
+        private bool IsConditionMet(bool condition, params bool[] values)
         {
             return values?.Any(m => m == condition) ?? false;
         }

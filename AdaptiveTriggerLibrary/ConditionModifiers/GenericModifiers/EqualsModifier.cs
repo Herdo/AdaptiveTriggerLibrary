@@ -12,7 +12,7 @@
         ///////////////////////////////////////////////////////////////////
         #region Private Methods
 
-        public bool IsConditionMet(T condition, params T[] values)
+        private bool IsConditionMet(T condition, params T[] values)
         {
             return values.Length >= 1
                 && Equals(condition, values[0]);

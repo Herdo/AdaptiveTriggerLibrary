@@ -11,7 +11,7 @@
         ///////////////////////////////////////////////////////////////////
         #region Private Methods
 
-        public bool IsConditionMet(IComparable condition, params IComparable[] values)
+        private bool IsConditionMet(IComparable condition, params IComparable[] values)
         {
             var value = values.Length >= 1
                 ? values[0]
