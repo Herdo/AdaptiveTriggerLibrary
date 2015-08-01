@@ -40,7 +40,7 @@
         }
 
         [TestMethod]
-        public void LessThanEqualTo_Bool_InvalidType()
+        public void LessThanEqualTo_Bool_InvalidType_ArgumentTypeMismatch()
         {
             // Arrange
             var modifier = new LessThanEqualToModifier();
@@ -49,7 +49,7 @@
             Action action = () => modifier.IsConditionMet("foo", false);
 
             // Assert
-            Assert.ThrowsException<InvalidCastException>(action);
+            Assert.ThrowsException<ArgumentException>(action);
         }
 
         [TestMethod]
@@ -84,7 +84,7 @@
         }
 
         [TestMethod]
-        public void LessThanEqualTo_Int32_InvalidType()
+        public void LessThanEqualTo_Int32_InvalidType_ArgumentTypeMismatch()
         {
             // Arrange
             var modifier = new LessThanEqualToModifier();
@@ -93,7 +93,7 @@
             Action action = () => modifier.IsConditionMet("foo", 15);
 
             // Assert
-            Assert.ThrowsException<InvalidCastException>(action);
+            Assert.ThrowsException<ArgumentException>(action);
         }
 
         [TestMethod]
@@ -128,7 +128,7 @@
         }
 
         [TestMethod]
-        public void LessThanEqualTo_Double_InvalidType()
+        public void LessThanEqualTo_Double_InvalidType_ArgumentTypeMismatch()
         {
             // Arrange
             var modifier = new LessThanEqualToModifier();
@@ -137,7 +137,7 @@
             Action action = () => modifier.IsConditionMet("foo", 15.0);
 
             // Assert
-            Assert.ThrowsException<InvalidCastException>(action);
+            Assert.ThrowsException<ArgumentException>(action);
         }
 
         [TestMethod]
@@ -172,7 +172,7 @@
         }
 
         [TestMethod]
-        public void LessThanEqualTo_String_InvalidType()
+        public void LessThanEqualTo_String_InvalidType_ArgumentTypeMismatch()
         {
             // Arrange
             var modifier = new LessThanEqualToModifier();
@@ -181,7 +181,7 @@
             Action action = () => modifier.IsConditionMet(42, "bar");
 
             // Assert
-            Assert.ThrowsException<InvalidCastException>(action);
+            Assert.ThrowsException<ArgumentException>(action);
         }
 
         [TestMethod]
@@ -216,7 +216,7 @@
         }
 
         [TestMethod]
-        public void LessThanEqualTo_DateTime_InvalidType()
+        public void LessThanEqualTo_DateTime_InvalidType_ArgumentTypeMismatch()
         {
             // Arrange
             var modifier = new LessThanEqualToModifier();
@@ -225,7 +225,7 @@
             Action action = () => modifier.IsConditionMet("foo", DateTime.MinValue);
 
             // Assert
-            Assert.ThrowsException<InvalidCastException>(action);
+            Assert.ThrowsException<ArgumentException>(action);
         }
 
         [TestMethod]
@@ -260,7 +260,7 @@
         }
 
         [TestMethod]
-        public void LessThanEqualTo_CustomIComparableImplementation_InvalidType()
+        public void LessThanEqualTo_CustomIComparableImplementation_InvalidType_ArgumentTypeMismatch()
         {
             // Arrange
             var modifier = new LessThanEqualToModifier();
@@ -269,7 +269,7 @@
             Action action = () => modifier.IsConditionMet(DateTime.Now, new CustomIComparableImplementation(15));
 
             // Assert
-            Assert.ThrowsException<InvalidCastException>(action);
+            Assert.ThrowsException<ArgumentException>(action);
         }
     }
 }
