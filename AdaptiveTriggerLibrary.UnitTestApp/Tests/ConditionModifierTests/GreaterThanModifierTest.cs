@@ -46,7 +46,7 @@
             Action action = () => modifier.IsConditionMet("foo", false);
 
             // Assert
-            Assert.ThrowsException<ArgumentException>(action);
+            Assert.ThrowsException<InvalidCastException>(action);
         }
 
         [TestMethod]
@@ -87,7 +87,7 @@
             Action action = () => modifier.IsConditionMet("foo", 15);
 
             // Assert
-            Assert.ThrowsException<ArgumentException>(action);
+            Assert.ThrowsException<InvalidCastException>(action);
         }
 
         [TestMethod]
@@ -128,7 +128,7 @@
             Action action = () => modifier.IsConditionMet("foo", 15.0);
 
             // Assert
-            Assert.ThrowsException<ArgumentException>(action);
+            Assert.ThrowsException<InvalidCastException>(action);
         }
 
         [TestMethod]
@@ -169,7 +169,7 @@
             Action action = () => modifier.IsConditionMet(42, "bar");
 
             // Assert
-            Assert.ThrowsException<ArgumentException>(action);
+            Assert.ThrowsException<InvalidCastException>(action);
         }
 
         [TestMethod]
@@ -210,7 +210,7 @@
             Action action = () => modifier.IsConditionMet("foo", DateTime.MinValue);
 
             // Assert
-            Assert.ThrowsException<ArgumentException>(action);
+            Assert.ThrowsException<InvalidCastException>(action);
         }
 
         [TestMethod]
@@ -251,7 +251,7 @@
             Action action = () => modifier.IsConditionMet("foo", new CustomIComparableImplementation(15));
 
             // Assert
-            Assert.ThrowsException<ArgumentException>(action);
+            Assert.ThrowsException<InvalidCastException>(action);
         }
     }
 }

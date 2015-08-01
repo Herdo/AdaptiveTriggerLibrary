@@ -11,7 +11,7 @@
     /// <typeparam name="TConditionModifier">The type of the <see cref="ConditionModifier"/>, that can influence the way that the <see cref="Condition"/> is treated.</typeparam>
     public abstract class AdaptiveTriggerBase<TCondition, TConditionModifier> : StateTriggerBase,
                                                                                 IAdaptiveTrigger<TCondition, TConditionModifier>
-        where TConditionModifier : IConditionModifier<TCondition>
+        where TConditionModifier : IConditionModifier
     {
         ///////////////////////////////////////////////////////////////////
         #region Fields

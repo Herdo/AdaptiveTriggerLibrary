@@ -1,5 +1,6 @@
 ﻿namespace AdaptiveTriggerLibrary.ConditionModifiers.LogicalModifiers
 {
+    using System;
     using System.Linq;
 
     /// <summary>
@@ -8,6 +9,16 @@
     public class OrModifier : ILogicalModifier
     {
         ///////////////////////////////////////////////////////////////////
+        #region Private Methods
+
+        public bool IsConditionMet(bool condition, params bool[] values)
+        {
+            return values?.Any(m => m == condition) ?? false;
+        }
+
+        #endregion
+
+        ///////////////////////////////////////////////////////////////////
         #region ILogicalModifier Members
 
         /// <summary>
@@ -15,10 +26,11 @@
         /// </summary>
         /// <param name="condition">The condition.</param>
         /// <param name="values">The actual value(s).</param>
+        /// <exception cref="InvalidCastException">Either <paramref name="condition"/> or an element in the sequence of <paramref name="values"/> cannot be casted to the underlying type.</exception>
         /// <returns>True, if the <paramref name="values"/> meets the specified <paramref name="condition"/>, otherwise false.</returns>
-        public bool IsConditionMet(bool condition, params bool[] values)
+        public bool IsConditionMet(object condition, params object[] values)
         {
-            return values?.Any(m => m == condition) ?? false;
+            return IsConditionMet((bool) condition, values?.Cast<bool>().ToArray());
         }
 
         #endregion

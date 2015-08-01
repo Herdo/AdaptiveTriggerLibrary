@@ -10,7 +10,7 @@
     /// This trigger activates, if the user interaction mode
     /// matches the specified <see cref="AdaptiveTriggerBase{TCondition,TConditionModifier}.Condition"/>.
     /// </summary>
-    public class InteractionModeTrigger : AdaptiveTriggerBase<UserInteractionMode, IGenericModifier<UserInteractionMode>>
+    public class InteractionModeTrigger : AdaptiveTriggerBase<UserInteractionMode, IGenericModifier>
     {
         ///////////////////////////////////////////////////////////////////
         #region Constructors

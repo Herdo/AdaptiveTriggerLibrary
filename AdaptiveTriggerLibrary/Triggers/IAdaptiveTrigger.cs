@@ -25,7 +25,7 @@
     /// <typeparam name="TCondition">The type of the <see cref="Condition"/>.</typeparam>
     /// <typeparam name="TConditionModifier">The type of the <see cref="ConditionModifier"/>, that can influence the way that the <see cref="Condition"/> is treated.</typeparam>
     public interface IAdaptiveTrigger<TCondition, TConditionModifier> : IAdaptiveTrigger
-        where TConditionModifier : IConditionModifier<TCondition>
+        where TConditionModifier : IConditionModifier
     {
         /// <summary>
         /// Gets or sets the condition that must be met, in order to set <see cref="IAdaptiveTrigger.IsActive"/> to true.

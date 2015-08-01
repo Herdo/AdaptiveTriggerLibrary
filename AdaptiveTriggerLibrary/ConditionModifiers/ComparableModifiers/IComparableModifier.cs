@@ -1,11 +1,10 @@
 ﻿namespace AdaptiveTriggerLibrary.ConditionModifiers.ComparableModifiers
 {
-    using System;
-
     /// <summary>
-    /// Base interface for modifiers implementing <see cref="IConditionModifier{IComparable}"/>.
+    /// Base interface for modifiers implementing <see cref="IConditionModifier"/>
+    /// with comparable operations.
     /// </summary>
-    public interface IComparableModifier : IConditionModifier<IComparable>
+    public interface IComparableModifier : IConditionModifier
     {
          
     }

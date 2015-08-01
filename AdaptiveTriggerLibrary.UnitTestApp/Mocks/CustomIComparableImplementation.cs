@@ -15,7 +15,7 @@
         {
             var other = obj as CustomIComparableImplementation;
             if (other == null)
-                throw new ArgumentException("Object must be of type CustomIComparableImplementation.");
+                throw new InvalidCastException("Object must be of type CustomIComparableImplementation.");
 
             return Value.CompareTo(other.Value);
         }
