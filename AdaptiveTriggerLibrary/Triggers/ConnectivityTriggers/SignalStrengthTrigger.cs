@@ -7,6 +7,7 @@
     /// This trigger activates, if the signal strength
     /// matches the specified <see cref="AdaptiveTriggerBase{TCondition,TConditionModifier}.Condition"/>.
     /// </summary>
+    /// <remarks>The value range spans from 0 to 5.</remarks>
     public class SignalStrengthTrigger : AdaptiveTriggerBase<byte, IComparableModifier>
     {
         ///////////////////////////////////////////////////////////////////
