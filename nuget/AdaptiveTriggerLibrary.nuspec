@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-    <metadata minClientVersion="3.1">
+    <metadata minClientVersion="3.0">
         <id>AdaptiveTriggerLibrary</id>
         <version>0.0.0-SpecifyVersionOnCommandline</version>
         <title>Adaptive Trigger Library for the Universal Windows Platform (Windows 10)</title>
