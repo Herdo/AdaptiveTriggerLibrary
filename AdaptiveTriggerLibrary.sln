@@ -16,7 +16,6 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "nuget", "nuget", "{A4CEF43A-381F-4560-85CF-08E3C6A4A071}"
 	ProjectSection(SolutionItems) = preProject
 		nuget\AdaptiveTriggerLibrary.nuspec = nuget\AdaptiveTriggerLibrary.nuspec
-		nuget\AdaptiveTriggerLibrary.targets = nuget\AdaptiveTriggerLibrary.targets
 		nuget\build-nupkg.cmd = nuget\build-nupkg.cmd
 		nuget\VERSION = nuget\VERSION
 	EndProjectSection

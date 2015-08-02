@@ -18,8 +18,6 @@
       <file target="lib\uap10.0\AdaptiveTriggerLibrary.dll"                   src="$bin$\Release\AdaptiveTriggerLibrary.dll" />
       <file target="lib\uap10.0\AdaptiveTriggerLibrary.xml"                   src="$bin$\Release\AdaptiveTriggerLibrary.xml" />
 
-      <file target="build\uap10.0\AdaptiveTriggerLibrary.targets"             src="AdaptiveTriggerLibrary\nuget\AdaptiveTriggerLibrary.targets" />
-
       <file target="runtimes\win10-arm\lib\uap10.0\AdaptiveTriggerLibrary.dll" 		src="$bin$\ARM\Release\AdaptiveTriggerLibrary.dll" />
       <file target="runtimes\win10-x64\lib\uap10.0\AdaptiveTriggerLibrary.dll" 		src="$bin$\x64\Release\AdaptiveTriggerLibrary.dll" />
       <file target="runtimes\win10-x86\lib\uap10.0\AdaptiveTriggerLibrary.dll" 		src="$bin$\x86\Release\AdaptiveTriggerLibrary.dll" />
