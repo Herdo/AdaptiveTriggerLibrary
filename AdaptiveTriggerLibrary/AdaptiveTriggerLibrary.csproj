@@ -148,6 +148,11 @@
     <Compile Include="Triggers\ConnectivityTriggers\WWANConnectionAvailableTrigger.cs" />
     <Compile Include="Triggers\ConnectivityTriggers\WLANConnectionAvailableTrigger.cs" />
     <Compile Include="Triggers\ConnectivityTriggers\NetworkConnectionStateTrigger.cs" />
+    <Compile Include="Triggers\HardwareInterfaceTriggers\RemainingDischargeTimeTrigger.cs" />
+    <Compile Include="Triggers\HardwareInterfaceTriggers\RemainingChargePercentTrigger.cs" />
+    <Compile Include="Triggers\HardwareInterfaceTriggers\EnergySaverStatusTrigger.cs" />
+    <Compile Include="Triggers\HardwareInterfaceTriggers\BatteryStatusTrigger.cs" />
+    <Compile Include="Triggers\HardwareInterfaceTriggers\PowerSupplyTrigger.cs" />
     <Compile Include="Triggers\IAdaptiveTrigger.cs" />
     <Compile Include="ConditionModifiers\IConditionModifier.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
