@@ -10,6 +10,19 @@
     public class LessThanModifierTest
     {
         [TestMethod]
+        public void GreaterThanEqualTo_InvalidCast()
+        {
+            // Arrange
+            IConditionModifier modifier = new LessThanModifier();
+
+            // Act
+            Action action = () => modifier.IsConditionMet(null, null);
+
+            // Assert
+            Assert.ThrowsException<InvalidCastException>(action);
+        }
+
+        [TestMethod]
         public void LessThan_Bool_True()
         {
             // Arrange

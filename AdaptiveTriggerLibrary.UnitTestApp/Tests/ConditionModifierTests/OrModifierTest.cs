@@ -9,6 +9,19 @@
     public class OrModifierTest
     {
         [TestMethod]
+        public void GreaterThanEqualTo_InvalidCast()
+        {
+            // Arrange
+            IConditionModifier modifier = new OrModifier();
+
+            // Act
+            Action action = () => modifier.IsConditionMet(null, null);
+
+            // Assert
+            Assert.ThrowsException<InvalidCastException>(action);
+        }
+
+        [TestMethod]
         public void Or_AllTrue_Single()
         {
             // Arrange

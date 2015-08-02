@@ -10,6 +10,19 @@
     public class NotEqualToModifierTest
     {
         [TestMethod]
+        public void GreaterThanEqualTo_InvalidCast()
+        {
+            // Arrange
+            IConditionModifier modifier = new NotEqualToModifier();
+
+            // Act
+            Action action = () => modifier.IsConditionMet(null, null);
+
+            // Assert
+            Assert.ThrowsException<InvalidCastException>(action);
+        }
+
+        [TestMethod]
         public void NotEquals_Bool_True()
         {
             // Arrange

@@ -10,6 +10,19 @@
     public class GreaterThanEqualToModifierTest
     {
         [TestMethod]
+        public void GreaterThanEqualTo_InvalidCast()
+        {
+            // Arrange
+            IConditionModifier modifier = new GreaterThanEqualToModifier();
+
+            // Act
+            Action action = () => modifier.IsConditionMet(null, null);
+
+            // Assert
+            Assert.ThrowsException<InvalidCastException>(action);
+        }
+
+        [TestMethod]
         public void GreaterThanEqualTo_Bool_True()
         {
             // Arrange
