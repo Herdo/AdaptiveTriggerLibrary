@@ -10,7 +10,7 @@
     public class EqualToModifierTest
     {
         [TestMethod]
-        public void GreaterThanEqualTo_InvalidCast()
+        public void EqualTo_InvalidCast()
         {
             // Arrange
             IConditionModifier modifier = new EqualToModifier();
@@ -23,7 +23,7 @@
         }
 
         [TestMethod]
-        public void Equals_Bool_True()
+        public void EqualTo_Bool_True()
         {
             // Arrange
             bool result;
@@ -37,7 +37,7 @@
         }
 
         [TestMethod]
-        public void Equals_Bool_False()
+        public void EqualTo_Bool_False()
         {
             // Arrange
             bool result;
@@ -51,7 +51,7 @@
         }
 
         [TestMethod]
-        public void Equals_Bool_InvalidType_ArgumentTypeMismatch()
+        public void EqualTo_Bool_InvalidType_ArgumentTypeMismatch()
         {
             // Arrange
             IConditionModifier modifier = new EqualToModifier();
@@ -64,7 +64,7 @@
         }
 
         [TestMethod]
-        public void Equals_Int32_True()
+        public void EqualTo_Int32_True()
         {
             // Arrange
             bool result;
@@ -78,7 +78,7 @@
         }
 
         [TestMethod]
-        public void Equals_Int32_False()
+        public void EqualTo_Int32_False()
         {
             // Arrange
             bool result;
@@ -92,7 +92,7 @@
         }
 
         [TestMethod]
-        public void Equals_Int32_InvalidType_ArgumentTypeMismatch()
+        public void EqualTo_Int32_InvalidType_ArgumentTypeMismatch()
         {
             // Arrange
             IConditionModifier modifier = new EqualToModifier();
@@ -105,7 +105,7 @@
         }
 
         [TestMethod]
-        public void Equals_Double_True()
+        public void EqualTo_Double_True()
         {
             // Arrange
             bool result;
@@ -119,7 +119,7 @@
         }
 
         [TestMethod]
-        public void Equals_Double_False()
+        public void EqualTo_Double_False()
         {
             // Arrange
             bool result;
@@ -133,7 +133,7 @@
         }
 
         [TestMethod]
-        public void Equals_Double_InvalidType_ArgumentTypeMismatch()
+        public void EqualTo_Double_InvalidType_ArgumentTypeMismatch()
         {
             // Arrange
             IConditionModifier modifier = new EqualToModifier();
@@ -146,7 +146,7 @@
         }
 
         [TestMethod]
-        public void Equals_String_True()
+        public void EqualTo_String_True()
         {
             // Arrange
             bool result;
@@ -160,7 +160,7 @@
         }
 
         [TestMethod]
-        public void Equals_String_False()
+        public void EqualTo_String_False()
         {
             // Arrange
             bool result;
@@ -174,7 +174,7 @@
         }
 
         [TestMethod]
-        public void Equals_String_InvalidType_ArgumentTypeMismatch()
+        public void EqualTo_String_InvalidType_ArgumentTypeMismatch()
         {
             // Arrange
             IConditionModifier modifier = new EqualToModifier();
@@ -187,7 +187,7 @@
         }
 
         [TestMethod]
-        public void Equals_DateTime_True()
+        public void EqualTo_DateTime_True()
         {
             // Arrange
             bool result;
@@ -201,7 +201,7 @@
         }
 
         [TestMethod]
-        public void Equals_DateTime_False()
+        public void EqualTo_DateTime_False()
         {
             // Arrange
             bool result;
@@ -215,7 +215,7 @@
         }
 
         [TestMethod]
-        public void Equals_DateTime_InvalidType_ArgumentTypeMismatch()
+        public void EqualTo_DateTime_InvalidType_ArgumentTypeMismatch()
         {
             // Arrange
             IConditionModifier modifier = new EqualToModifier();
@@ -228,7 +228,7 @@
         }
 
         [TestMethod]
-        public void Equals_CustomIComparableImplementation_True()
+        public void EqualTo_CustomIComparableImplementation_True()
         {
             // Arrange
             bool result;
@@ -242,7 +242,7 @@
         }
 
         [TestMethod]
-        public void Equals_CustomIComparableImplementation_False()
+        public void EqualTo_CustomIComparableImplementation_False()
         {
             // Arrange
             bool result;
@@ -256,7 +256,7 @@
         }
 
         [TestMethod]
-        public void Equals_CustomIComparableImplementation_InvalidType_ArgumentTypeMismatch()
+        public void EqualTo_CustomIComparableImplementation_InvalidType_ArgumentTypeMismatch()
         {
             // Arrange
             IConditionModifier modifier = new EqualToModifier();

@@ -10,7 +10,7 @@
     public class AndModifierTest
     {
         [TestMethod]
-        public void GreaterThanEqualTo_InvalidCast()
+        public void And_InvalidCast()
         {
             // Arrange
             IConditionModifier modifier = new AndModifier();

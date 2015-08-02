@@ -10,7 +10,7 @@
     public class NotEqualToModifierTest
     {
         [TestMethod]
-        public void GreaterThanEqualTo_InvalidCast()
+        public void NotEqualTo_InvalidCast()
         {
             // Arrange
             IConditionModifier modifier = new NotEqualToModifier();
@@ -23,7 +23,7 @@
         }
 
         [TestMethod]
-        public void NotEquals_Bool_True()
+        public void NotEqualTo_Bool_True()
         {
             // Arrange
             bool result;
@@ -37,7 +37,7 @@
         }
 
         [TestMethod]
-        public void NotEquals_Bool_False()
+        public void NotEqualTo_Bool_False()
         {
             // Arrange
             bool result;
@@ -51,7 +51,7 @@
         }
 
         [TestMethod]
-        public void NotEquals_Bool_InvalidType_ArgumentTypeMismatch()
+        public void NotEqualTo_Bool_InvalidType_ArgumentTypeMismatch()
         {
             // Arrange
             IConditionModifier modifier = new NotEqualToModifier();
@@ -64,7 +64,7 @@
         }
 
         [TestMethod]
-        public void NotEquals_Int32_True()
+        public void NotEqualTo_Int32_True()
         {
             // Arrange
             bool result;
@@ -78,7 +78,7 @@
         }
 
         [TestMethod]
-        public void NotEquals_Int32_False()
+        public void NotEqualTo_Int32_False()
         {
             // Arrange
             bool result;
@@ -92,7 +92,7 @@
         }
 
         [TestMethod]
-        public void NotEquals_Int32_InvalidType_ArgumentTypeMismatch()
+        public void NotEqualTo_Int32_InvalidType_ArgumentTypeMismatch()
         {
             // Arrange
             IConditionModifier modifier = new NotEqualToModifier();
@@ -105,7 +105,7 @@
         }
 
         [TestMethod]
-        public void NotEquals_Double_True()
+        public void NotEqualTo_Double_True()
         {
             // Arrange
             bool result;
@@ -119,7 +119,7 @@
         }
 
         [TestMethod]
-        public void NotEquals_Double_False()
+        public void NotEqualTo_Double_False()
         {
             // Arrange
             bool result;
@@ -133,7 +133,7 @@
         }
 
         [TestMethod]
-        public void NotEquals_Double_InvalidType_ArgumentTypeMismatch()
+        public void NotEqualTo_Double_InvalidType_ArgumentTypeMismatch()
         {
             // Arrange
             IConditionModifier modifier = new NotEqualToModifier();
@@ -146,7 +146,7 @@
         }
 
         [TestMethod]
-        public void NotEquals_String_True()
+        public void NotEqualTo_String_True()
         {
             // Arrange
             bool result;
@@ -160,7 +160,7 @@
         }
 
         [TestMethod]
-        public void NotEquals_String_False()
+        public void NotEqualTo_String_False()
         {
             // Arrange
             bool result;
@@ -174,7 +174,7 @@
         }
 
         [TestMethod]
-        public void NotEquals_String_InvalidType_ArgumentTypeMismatch()
+        public void NotEqualTo_String_InvalidType_ArgumentTypeMismatch()
         {
             // Arrange
             IConditionModifier modifier = new NotEqualToModifier();
@@ -187,7 +187,7 @@
         }
 
         [TestMethod]
-        public void NotEquals_DateTime_True()
+        public void NotEqualTo_DateTime_True()
         {
             // Arrange
             bool result;
@@ -201,7 +201,7 @@
         }
 
         [TestMethod]
-        public void NotEquals_DateTime_False()
+        public void NotEqualTo_DateTime_False()
         {
             // Arrange
             bool result;
@@ -215,7 +215,7 @@
         }
 
         [TestMethod]
-        public void NotEquals_DateTime_InvalidType_ArgumentTypeMismatch()
+        public void NotEqualTo_DateTime_InvalidType_ArgumentTypeMismatch()
         {
             // Arrange
             IConditionModifier modifier = new NotEqualToModifier();
@@ -228,7 +228,7 @@
         }
 
         [TestMethod]
-        public void NotEquals_CustomIComparableImplementation_True()
+        public void NotEqualTo_CustomIComparableImplementation_True()
         {
             // Arrange
             bool result;
@@ -242,7 +242,7 @@
         }
 
         [TestMethod]
-        public void NotEquals_CustomIComparableImplementation_False()
+        public void NotEqualTo_CustomIComparableImplementation_False()
         {
             // Arrange
             bool result;
@@ -256,7 +256,7 @@
         }
 
         [TestMethod]
-        public void NotEquals_CustomIComparableImplementation_InvalidType_ArgumentTypeMismatch()
+        public void NotEqualTo_CustomIComparableImplementation_InvalidType_ArgumentTypeMismatch()
         {
             // Arrange
             IConditionModifier modifier = new NotEqualToModifier();

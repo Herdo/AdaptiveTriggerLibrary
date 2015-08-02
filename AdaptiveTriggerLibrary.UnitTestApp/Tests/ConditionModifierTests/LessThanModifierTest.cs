@@ -10,7 +10,7 @@
     public class LessThanModifierTest
     {
         [TestMethod]
-        public void GreaterThanEqualTo_InvalidCast()
+        public void LessThan_InvalidCast()
         {
             // Arrange
             IConditionModifier modifier = new LessThanModifier();

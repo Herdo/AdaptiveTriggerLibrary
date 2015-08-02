@@ -10,7 +10,7 @@
     public class EqualsModifierTest
     {
         [TestMethod]
-        public void GreaterThanEqualTo_InvalidCast()
+        public void Equals_InvalidCast()
         {
             // Arrange
             IConditionModifier modifier = new EqualsModifier<bool>();

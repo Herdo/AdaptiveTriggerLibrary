@@ -9,7 +9,7 @@
     public class OrModifierTest
     {
         [TestMethod]
-        public void GreaterThanEqualTo_InvalidCast()
+        public void Or_InvalidCast()
         {
             // Arrange
             IConditionModifier modifier = new OrModifier();
