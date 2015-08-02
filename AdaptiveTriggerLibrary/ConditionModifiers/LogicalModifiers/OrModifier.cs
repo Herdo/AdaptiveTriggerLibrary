@@ -37,16 +37,15 @@
             Tuple<bool, bool> singleValueParameters;
             Tuple<bool, IEnumerable<bool>> multiValueParameters;
 
-            var parsed = TryGetParsedParameters(condition, value, out singleValueParameters);
-
-            // Support single values
-            if (parsed)
-                return IsConditionMet(singleValueParameters.Item1, new[] { singleValueParameters.Item2 });
-
             // Support multiple values
-            parsed = TryGetParsedParameters(condition, value, out multiValueParameters);
+            var parsed = TryGetParsedParameters(condition, value, out multiValueParameters);
             if (parsed)
                 return IsConditionMet(multiValueParameters.Item1, multiValueParameters.Item2);
+
+            // Support single values
+            parsed = TryGetParsedParameters(condition, value, out singleValueParameters);
+            if (parsed)
+                return IsConditionMet(singleValueParameters.Item1, new[] { singleValueParameters.Item2 });
 
             // Cast failed
             throw new InvalidCastException(InvalidCastMessage);
