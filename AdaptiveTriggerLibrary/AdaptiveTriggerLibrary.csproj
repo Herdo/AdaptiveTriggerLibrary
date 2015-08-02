@@ -140,6 +140,7 @@
     <Compile Include="Functional\WeakEvent.cs" />
     <Compile Include="Triggers\ConnectivityTriggers\NetworkEncryptionTypeTrigger.cs" />
     <Compile Include="Triggers\ConnectivityTriggers\NetworkAuthenticationTypeTrigger.cs" />
+    <Compile Include="Triggers\ConnectivityTriggers\IsRoamingDataTrigger.cs" />
     <Compile Include="Triggers\ConnectivityTriggers\SignalStrengthTrigger.cs" />
     <Compile Include="Triggers\ConnectivityTriggers\WWANConnectionAvailableTrigger.cs" />
     <Compile Include="Triggers\ConnectivityTriggers\WLANConnectionAvailableTrigger.cs" />
