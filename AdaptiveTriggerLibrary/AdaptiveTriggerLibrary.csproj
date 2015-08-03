@@ -161,6 +161,7 @@
     <Compile Include="Triggers\HardwareInterfaceTriggers\DeviceFamilyTrigger.cs" />
     <Compile Include="Triggers\LogicalTriggers\MultiTrigger.cs" />
     <Compile Include="Triggers\SoftwareInterfaceTriggers\ApiInformationTrigger.cs" />
+    <Compile Include="Triggers\SoftwareInterfaceTriggers\DeviceFamilyVersionTrigger.cs" />
     <Compile Include="Triggers\UserInteractionTriggers\InputTypeTrigger.cs" />
     <Compile Include="Triggers\UserInteractionTriggers\InteractionModeTrigger.cs" />
     <Compile Include="Triggers\UserInterfaceTriggers\ControlWidthTrigger.cs" />
