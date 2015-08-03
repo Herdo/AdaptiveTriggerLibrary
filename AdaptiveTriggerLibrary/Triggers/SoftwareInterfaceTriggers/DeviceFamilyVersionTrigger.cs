@@ -14,7 +14,6 @@
     public class DeviceFamilyVersionTrigger : AdaptiveTriggerBase<Version, IComparableModifier>
     {
         ///////////////////////////////////////////////////////////////////
-
         #region Constructors
 
         /// <summary>
@@ -32,7 +31,6 @@
         #endregion
 
         ///////////////////////////////////////////////////////////////////
-
         #region Private Methods
 
         private static Version GetCurrentValue()
