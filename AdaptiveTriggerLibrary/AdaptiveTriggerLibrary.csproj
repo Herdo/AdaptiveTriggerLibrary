@@ -166,6 +166,7 @@
     <Compile Include="Triggers\UserInteractionTriggers\InteractionModeTrigger.cs" />
     <Compile Include="Triggers\UserInterfaceTriggers\ControlWidthTrigger.cs" />
     <Compile Include="Triggers\UserInterfaceTriggers\ControlHeightTrigger.cs" />
+    <Compile Include="Triggers\UserInterfaceTriggers\FullscreenTrigger.cs" />
     <Compile Include="Triggers\UserInterfaceTriggers\LayoutDirectionTrigger.cs" />
     <Compile Include="Triggers\UserInterfaceTriggers\ScaleTrigger.cs" />
     <Compile Include="Triggers\UserInterfaceTriggers\OrientationTrigger.cs" />

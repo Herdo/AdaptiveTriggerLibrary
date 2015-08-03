@@ -20,6 +20,10 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
 
         <VisualStateManager.VisualStateGroups>
             <!-- Visual State Group for Device Family -->
@@ -73,7 +77,7 @@
                 <VisualState>
                     <VisualState.StateTriggers>
                         <userInterfaceTriggers:ControlWidthTrigger x:Name="HorizontalRectangleFillTrigger"
-                                                                    Condition="550"/>
+                                                                   Condition="550"/>
                     </VisualState.StateTriggers>
                     <VisualState.Setters>
                         <Setter Target="HorizontalRectangle.Fill"
@@ -91,16 +95,33 @@
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
+            
+            <!-- Fullscreen -->
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <userInterfaceTriggers:FullScreenTrigger UseFullScreenModeProperty="True"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="FullscreenTextBlock.Text"
+                                Value="This app is running in fullscreen!"/>
+                        <Setter Target="FullscreenButton.Icon"
+                                Value="BackToWindow"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
-        
-        <TextBlock x:Name="SupportedTextBlock"
-                   Grid.Row="0"
+
+        <TextBlock Grid.Row="0"
+                   Grid.Column="0"
+                   x:Name="SupportedTextBlock"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Center"
                    Text="This device family is not supported!"
                    Foreground="{ThemeResource ApplicationForegroundThemeBrush}"/>
         
         <Rectangle Grid.Row="1"
+                   Grid.Column="0"
                    x:Name="HorizontalRectangle"
                    HorizontalAlignment="Stretch"
                    VerticalAlignment="Center"
@@ -109,6 +130,7 @@
                    Fill="Red"
                    Visibility="Collapsed"/>
         <Rectangle Grid.Row="1"
+                   Grid.Column="0"
                    x:Name="VerticalRectangle"
                    HorizontalAlignment="Center"
                    VerticalAlignment="Stretch"
@@ -116,5 +138,24 @@
                    Margin="25"
                    Fill="Blue"
                    Visibility="Collapsed"/>
+
+        <StackPanel Grid.Row="0"
+                    Grid.Column="1"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <TextBlock x:Name="FullscreenTextBlock"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Margin="10"
+                       Text="This app is not running in fullscreen!"
+                       Foreground="{ThemeResource ApplicationForegroundThemeBrush}"/>
+            <AppBarButton x:Name="FullscreenButton"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          Margin="10"
+                          Icon="FullScreen"
+                          Click="FullscreenButton_Click"
+                          Label="Toggle Fullscreen"/>
+        </StackPanel>
     </Grid>
 </Page>

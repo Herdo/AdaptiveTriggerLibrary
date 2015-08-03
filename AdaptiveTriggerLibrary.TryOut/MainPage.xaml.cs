@@ -17,6 +17,8 @@ using Windows.UI.Xaml.Navigation;
 
 namespace AdaptiveTriggerLibrary.TryOut
 {
+    using Windows.UI.ViewManagement;
+
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
@@ -25,10 +27,19 @@ namespace AdaptiveTriggerLibrary.TryOut
         public MainPage()
         {
             this.InitializeComponent();
-
+            
             // Set target elements
             HorizontalRectangleFillTrigger.TargetElement = HorizontalRectangle;
             VerticalRectangleFillTrigger.TargetElement = VerticalRectangle;
+        }
+
+        private void FullscreenButton_Click(object sender, RoutedEventArgs e)
+        {
+            var currentView = ApplicationView.GetForCurrentView();
+            if (currentView.IsFullScreenMode)
+                currentView.ExitFullScreenMode();
+            else
+                currentView.TryEnterFullScreenMode();
         }
     }
 }
