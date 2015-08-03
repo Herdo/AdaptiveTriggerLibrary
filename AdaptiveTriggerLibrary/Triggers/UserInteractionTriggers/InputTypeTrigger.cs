@@ -11,7 +11,7 @@
     /// This trigger activates, if the current input type
     /// matches the specified <see cref="AdaptiveTriggerBase{TCondition,TConditionModifier}.Condition"/>.
     /// </summary>
-    public class InputTypeTrigger : AdaptiveTriggerBase<PointerDeviceType, IConditionModifier>
+    public class InputTypeTrigger : AdaptiveTriggerBase<PointerDeviceType, IGenericModifier>
     {
         ///////////////////////////////////////////////////////////////////
         #region Fields
@@ -55,7 +55,7 @@
 
         /// <summary>
         /// Initializes a new instance of the <see cref="InputTypeTrigger"/> class.
-        /// Default modifier: <see cref="EqualsModifier{T}"/>.
+        /// Default modifier: <see cref="EqualsModifier{PointerDeviceType}"/>.
         /// </summary>
         public InputTypeTrigger()
             : base(new EqualsModifier<PointerDeviceType>())
