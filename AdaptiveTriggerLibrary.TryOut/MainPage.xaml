@@ -9,10 +9,12 @@
     xmlns:logicalTriggers="using:AdaptiveTriggerLibrary.Triggers.LogicalTriggers"
     xmlns:hardwareInterfaceTriggers="using:AdaptiveTriggerLibrary.Triggers.HardwareInterfaceTriggers"
     xmlns:userInterfaceTriggers="using:AdaptiveTriggerLibrary.Triggers.UserInterfaceTriggers"
+    xmlns:comparableModifiers="using:AdaptiveTriggerLibrary.ConditionModifiers.ComparableModifiers"
     mc:Ignorable="d">
 
     <Page.Resources>
         <logicalModifiers:OrModifier x:Key="OrModifier"/>
+        <comparableModifiers:LessThanModifier x:Key="LessThanModifier"/>
     </Page.Resources>
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
@@ -110,6 +112,42 @@
                     </VisualState.Setters>
                 </VisualState>
             </VisualStateGroup>
+            
+            <!-- Window Size -->
+            <VisualStateGroup>
+                <!-- small -->
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <logicalTriggers:MultiTrigger ConditionModifier="{StaticResource OrModifier}">
+                            <logicalTriggers:MultiTrigger.Triggers>
+                                <userInterfaceTriggers:WindowHeightTrigger Condition="500"
+                                                                           ConditionModifier="{StaticResource LessThanModifier}"/>
+                                <userInterfaceTriggers:WindowWidthTrigger Condition="500"
+                                                                          ConditionModifier="{StaticResource LessThanModifier}"/>
+                            </logicalTriggers:MultiTrigger.Triggers>
+                        </logicalTriggers:MultiTrigger>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="WindowSizeTextBlock.Text"
+                                Value="This is a small window (boring)..."/>
+                    </VisualState.Setters>
+                </VisualState>
+                <!-- BIG -->
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <logicalTriggers:MultiTrigger>
+                            <logicalTriggers:MultiTrigger.Triggers>
+                                <userInterfaceTriggers:WindowHeightTrigger Condition="500"/>
+                                <userInterfaceTriggers:WindowWidthTrigger Condition="500"/>
+                            </logicalTriggers:MultiTrigger.Triggers>
+                        </logicalTriggers:MultiTrigger>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="WindowSizeTextBlock.Text"
+                                Value="This is a big window! Awesome!"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
         </VisualStateManager.VisualStateGroups>
 
         <TextBlock Grid.Row="0"
@@ -157,5 +195,11 @@
                           Click="FullscreenButton_Click"
                           Label="Toggle Fullscreen"/>
         </StackPanel>
+        
+        <TextBlock Grid.Row="1"
+                   Grid.Column="1"
+                   x:Name="WindowSizeTextBlock"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"/>
     </Grid>
 </Page>

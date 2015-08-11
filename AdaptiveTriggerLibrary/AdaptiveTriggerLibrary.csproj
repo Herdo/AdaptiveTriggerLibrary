@@ -170,6 +170,8 @@
     <Compile Include="Triggers\UserInterfaceTriggers\LayoutDirectionTrigger.cs" />
     <Compile Include="Triggers\UserInterfaceTriggers\ScaleTrigger.cs" />
     <Compile Include="Triggers\UserInterfaceTriggers\OrientationTrigger.cs" />
+    <Compile Include="Triggers\UserInterfaceTriggers\WindowWidthTrigger.cs" />
+    <Compile Include="Triggers\UserInterfaceTriggers\WindowHeightTrigger.cs" />
     <Content Include="Properties\AdaptiveTriggerLibrary.rd.xml" />
   </ItemGroup>
   <ItemGroup />
