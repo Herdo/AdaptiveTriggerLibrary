@@ -85,6 +85,32 @@
 
         private void Triggers_CollectionChanged(object sender, NotifyCollectionChangedEventArgs e)
         {
+            // Remove event handler from old triggers
+            if (e.OldItems != null)
+            {
+                // ReSharper disable once LoopCanBePartlyConvertedToQuery
+                foreach (var oldItem in e.OldItems)
+                {
+                    var trigger = oldItem as IAdaptiveTrigger;
+                    if (trigger == null)
+                        continue;
+                    trigger.IsActiveChanged -= Trigger_IsActiveChanged;
+                }
+            }
+
+            // Add event handler to new triggers
+            if (e.NewItems != null)
+            {
+                // ReSharper disable once LoopCanBePartlyConvertedToQuery
+                foreach (var newItem in e.NewItems)
+                {
+                    var trigger = newItem as IAdaptiveTrigger;
+                    if (trigger == null)
+                        continue;
+                    trigger.IsActiveChanged += Trigger_IsActiveChanged;
+                }
+            }
+
             CurrentValue = GetCurrentValue();
         }
 
