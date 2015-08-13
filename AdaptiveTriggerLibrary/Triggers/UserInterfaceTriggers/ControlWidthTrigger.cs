@@ -3,7 +3,6 @@
     using System;
     using Windows.UI.Xaml;
     using ConditionModifiers.ComparableModifiers;
-    using Functional;
 
     /// <summary>
     /// This trigger activates, if the control width
@@ -33,14 +32,12 @@
                 if (value == _targetElement) return;
 
                 if (_targetElement != null)
-                    WeakEvent.Unsubscribe<SizeChangedEventHandler>(_targetElement, nameof(FrameworkElement.SizeChanged),
-                        TargetElement_SizeChanged);
+                    _targetElement.SizeChanged -= TargetElement_SizeChanged;
 
                 _targetElement = value;
 
                 if (_targetElement != null)
-                    WeakEvent.Subscribe<SizeChangedEventHandler>(_targetElement, nameof(FrameworkElement.SizeChanged),
-                        TargetElement_SizeChanged);
+                    _targetElement.SizeChanged += TargetElement_SizeChanged;
 
                 CurrentValue = GetCurrentValue();
             }

@@ -3,9 +3,7 @@
     using Windows.Devices.Input;
     using Windows.UI.Xaml;
     using Windows.UI.Xaml.Input;
-    using ConditionModifiers;
     using ConditionModifiers.GenericModifiers;
-    using Functional;
 
     /// <summary>
     /// This trigger activates, if the current input type
@@ -35,14 +33,12 @@
                 if (value == _targetElement) return;
 
                 if (_targetElement != null)
-                    WeakEvent.Unsubscribe<PointerEventHandler>(_targetElement, nameof(FrameworkElement.PointerPressed),
-                        TargetElement_PointerPressed);
+                    _targetElement.PointerPressed -= TargetElement_PointerPressed;
 
                 _targetElement = value;
                 
                 if (_targetElement != null)
-                    WeakEvent.Subscribe<PointerEventHandler>(_targetElement, nameof(FrameworkElement.PointerPressed),
-                        TargetElement_PointerPressed);
+                    _targetElement.PointerPressed += TargetElement_PointerPressed;
 
                 CurrentValue = GetCurrentValue();
             }

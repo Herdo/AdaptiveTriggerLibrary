@@ -4,7 +4,6 @@
     using Windows.UI.ViewManagement;
     using Windows.UI.Xaml;
     using ConditionModifiers.GenericModifiers;
-    using Functional;
 
     /// <summary>
     /// This trigger activates, if the user interaction mode
@@ -23,7 +22,7 @@
             : base(new EqualsModifier<UserInteractionMode>())
         {
             // Create a weak subscription to the SizeChanged event so that we don't pin the trigger or page in memory
-            WeakEvent.Subscribe<WindowSizeChangedEventHandler>(Window.Current, nameof(Window.Current.SizeChanged), MainWindow_SizeChanged);
+            Window.Current.SizeChanged += MainWindow_SizeChanged;
 
             // Set initial value
             CurrentValue = GetCurrentValue();

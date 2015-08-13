@@ -4,7 +4,6 @@
     using Windows.UI.ViewManagement;
     using Windows.UI.Xaml;
     using ConditionModifiers.GenericModifiers;
-    using Functional;
 
     /// <summary>
     /// This trigger activates, if the current application view Fullscreen status
@@ -55,7 +54,7 @@
             _useFullScreenModeProperty = false;
 
             // Create a weak subscription to the UI event so that we don't pin the trigger or page in memory
-            WeakEvent.Subscribe<WindowSizeChangedEventHandler>(Window.Current, nameof(Window.SizeChanged), CurrentWindow_SizeChanged);
+            Window.Current.SizeChanged += CurrentWindow_SizeChanged;
 
             // Set initial value
             CurrentValue = GetCurrentValue();
