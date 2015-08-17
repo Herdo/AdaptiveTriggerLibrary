@@ -150,6 +150,7 @@
                     throw new InvalidOperationException("ConditionModifier has already been set.");
                 _conditionModifier = value;
                 _isConditionModifierSet = true;
+                ValidateIfActive();
             }
         }
 
