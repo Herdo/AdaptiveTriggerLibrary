@@ -7,7 +7,8 @@
     /// This trigger activates, if $TRIGGER_ACTIVATION$&#xD;
     /// matches the specified &lt;see cref="AdaptiveTriggerBase{TCondition,TConditionModifier}.Condition"/&gt;.&#xD;
     /// &lt;/summary&gt;&#xD;
-    public class $CLASS$ : AdaptiveTriggerBase&lt;$TCONDITION$, $TCONDITION_MODIFIER$&gt;&#xD;
+    public class $CLASS$ : AdaptiveTriggerBase&lt;$TCONDITION$, $TCONDITION_MODIFIER$&gt;,&#xD;
+							$IStaticOrDynamicTrigger$&#xD;
     {&#xD;
         ///////////////////////////////////////////////////////////////////&#xD;
         #region Constructors&#xD;
@@ -19,9 +20,8 @@
         public $CLASS$()&#xD;
             : base(new $DEFAULT_MODIFIER$())&#xD;
         {&#xD;
-            // Subscribe to state changed events, use WeakEvent.Subscribe for UI events&#xD;
-            // Create a weak subscription to the UI event so that we don't pin the trigger or page in memory&#xD;
-            // WeakEvent.Subscribe&lt;&gt;(, nameof(), );&#xD;
+            // Subscribe to state changed events&#xD;
+			// xyz.Changed += OnChanged;&#xD;
 &#xD;
             // Set initial value&#xD;
             CurrentValue = GetCurrentValue();&#xD;
@@ -67,4 +67,6 @@
 	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Field/=TCONDITION_005FMODIFIER/@KeyIndexDefined">True</s:Boolean>
 	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Field/=TCONDITION_005FMODIFIER/Order/@EntryValue">5</s:Int64>
 	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Field/=DEFAULT_005FMODIFIER/@KeyIndexDefined">True</s:Boolean>
-	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Field/=DEFAULT_005FMODIFIER/Order/@EntryValue">6</s:Int64></wpf:ResourceDictionary>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Field/=DEFAULT_005FMODIFIER/Order/@EntryValue">6</s:Int64>
+	<s:Boolean x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Field/=IStaticOrDynamicTrigger/@KeyIndexDefined">True</s:Boolean>
+	<s:Int64 x:Key="/Default/PatternsAndTemplates/LiveTemplates/Template/=36B45F0D252D79409BE93184AFB17544/Field/=IStaticOrDynamicTrigger/Order/@EntryValue">7</s:Int64></wpf:ResourceDictionary>
