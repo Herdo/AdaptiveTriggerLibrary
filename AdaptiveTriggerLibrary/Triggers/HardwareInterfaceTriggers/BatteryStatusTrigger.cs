@@ -7,7 +7,8 @@
     /// This trigger activates, if the current battery status
     /// matches the specified <see cref="AdaptiveTriggerBase{TCondition,TConditionModifier}.Condition"/>.
     /// </summary>
-    public class BatteryStatusTrigger : AdaptiveTriggerBase<BatteryStatus, IComparableModifier>
+    public class BatteryStatusTrigger : AdaptiveTriggerBase<BatteryStatus, IComparableModifier>,
+                                        IDynamicTrigger
     {
         ///////////////////////////////////////////////////////////////////
         #region Constructors

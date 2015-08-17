@@ -11,7 +11,8 @@
     /// This trigger activates, if the current device family version (OS version)
     /// matches the specified <see cref="AdaptiveTriggerBase{TCondition,TConditionModifier}.Condition"/>.
     /// </summary>
-    public class DeviceFamilyVersionTrigger : AdaptiveTriggerBase<Version, IComparableModifier>
+    public class DeviceFamilyVersionTrigger : AdaptiveTriggerBase<Version, IComparableModifier>,
+                                              IStaticTrigger
     {
         ///////////////////////////////////////////////////////////////////
         #region Constructors

@@ -7,7 +7,8 @@
     /// This trigger activates, if the connection being close to the data limit
     /// matches the specified <see cref="AdaptiveTriggerBase{TCondition,TConditionModifier}.Condition"/>.
     /// </summary>
-    public class ApproachingDataLimitTrigger : AdaptiveTriggerBase<bool, IGenericModifier>
+    public class ApproachingDataLimitTrigger : AdaptiveTriggerBase<bool, IGenericModifier>,
+                                               IDynamicTrigger
     {
         ///////////////////////////////////////////////////////////////////
         #region Constructors

@@ -7,7 +7,8 @@
     /// This trigger activates, if the current power supply
     /// matches the specified <see cref="AdaptiveTriggerBase{TCondition,TConditionModifier}.Condition"/>.
     /// </summary>
-    public class PowerSupplyTrigger : AdaptiveTriggerBase<PowerSupplyStatus, IComparableModifier>
+    public class PowerSupplyTrigger : AdaptiveTriggerBase<PowerSupplyStatus, IComparableModifier>,
+                                      IDynamicTrigger
     {
         ///////////////////////////////////////////////////////////////////
         #region Constructors

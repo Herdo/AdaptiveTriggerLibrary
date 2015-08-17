@@ -7,7 +7,8 @@
     /// This trigger activates, if the current device family
     /// matches the specified <see cref="AdaptiveTriggerBase{TCondition,TConditionModifier}.Condition"/>.
     /// </summary>
-    public class DeviceFamilyTrigger : AdaptiveTriggerBase<string, IComparableModifier>
+    public class DeviceFamilyTrigger : AdaptiveTriggerBase<string, IComparableModifier>,
+                                       IStaticTrigger
     {
         ///////////////////////////////////////////////////////////////////
         #region Constructors

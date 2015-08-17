@@ -9,7 +9,8 @@
     /// This trigger activates, if current window orientation
     /// matches the specified <see cref="AdaptiveTriggerBase{TCondition,TConditionModifier}.Condition"/>.
     /// </summary>
-    public class OrientationTrigger : AdaptiveTriggerBase<ApplicationViewOrientation, IGenericModifier>
+    public class OrientationTrigger : AdaptiveTriggerBase<ApplicationViewOrientation, IGenericModifier>,
+                                      IDynamicTrigger
     {
         ///////////////////////////////////////////////////////////////////
         #region Constructors

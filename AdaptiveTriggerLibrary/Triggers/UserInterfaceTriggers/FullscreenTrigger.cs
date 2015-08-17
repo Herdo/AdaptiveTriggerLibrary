@@ -9,7 +9,8 @@
     /// This trigger activates, if the current application view Fullscreen status
     /// matches the specified <see cref="AdaptiveTriggerBase{TCondition,TConditionModifier}.Condition"/>.
     /// </summary>
-    public class FullScreenTrigger : AdaptiveTriggerBase<bool, IGenericModifier>
+    public class FullScreenTrigger : AdaptiveTriggerBase<bool, IGenericModifier>,
+                                     IDynamicTrigger
     {
         ///////////////////////////////////////////////////////////////////
         #region Fields

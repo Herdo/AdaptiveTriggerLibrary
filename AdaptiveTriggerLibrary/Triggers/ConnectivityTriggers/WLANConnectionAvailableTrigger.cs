@@ -7,7 +7,8 @@
     /// This trigger activates, if the current internet connection profile being a WLAN (WiFi) connection profile
     /// matches the specified <see cref="AdaptiveTriggerBase{TCondition,TConditionModifier}.Condition"/>.
     /// </summary>
-    public class WLANConnectionAvailableTrigger : AdaptiveTriggerBase<bool, IGenericModifier>
+    public class WLANConnectionAvailableTrigger : AdaptiveTriggerBase<bool, IGenericModifier>,
+                                                  IDynamicTrigger
     {
         ///////////////////////////////////////////////////////////////////
         #region Constructors

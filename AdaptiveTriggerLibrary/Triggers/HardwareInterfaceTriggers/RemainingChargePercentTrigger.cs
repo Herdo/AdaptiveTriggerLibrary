@@ -7,7 +7,8 @@
     /// This trigger activates, if the current remaining charge percent
     /// matches the specified <see cref="AdaptiveTriggerBase{TCondition,TConditionModifier}.Condition"/>.
     /// </summary>
-    public class RemainingChargePercentTrigger : AdaptiveTriggerBase<int, IComparableModifier>
+    public class RemainingChargePercentTrigger : AdaptiveTriggerBase<int, IComparableModifier>,
+                                                 IDynamicTrigger
     {
         ///////////////////////////////////////////////////////////////////
         #region Constructors

@@ -7,7 +7,8 @@
     /// This trigger activates, if a network connection state
     /// matches the specified <see cref="AdaptiveTriggerBase{TCondition,TConditionModifier}.Condition"/>.
     /// </summary>
-    public class NetworkConnectionStateTrigger : AdaptiveTriggerBase<NetworkConnectivityLevel, IGenericModifier>
+    public class NetworkConnectionStateTrigger : AdaptiveTriggerBase<NetworkConnectivityLevel, IGenericModifier>,
+                                                 IDynamicTrigger
     {
         ///////////////////////////////////////////////////////////////////
         #region Constructors

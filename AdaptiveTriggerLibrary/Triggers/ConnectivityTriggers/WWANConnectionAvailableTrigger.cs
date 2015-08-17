@@ -7,7 +7,8 @@
     /// This trigger activates, if the current internet connection profile being a WWAN (mobile) connection profile
     /// matches the specified <see cref="AdaptiveTriggerBase{TCondition,TConditionModifier}.Condition"/>.
     /// </summary>
-    public class WWANConnectionAvailableTrigger : AdaptiveTriggerBase<bool, IGenericModifier>
+    public class WWANConnectionAvailableTrigger : AdaptiveTriggerBase<bool, IGenericModifier>,
+                                                  IDynamicTrigger
     {
         ///////////////////////////////////////////////////////////////////
         #region Constructors

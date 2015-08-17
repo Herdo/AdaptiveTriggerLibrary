@@ -7,7 +7,8 @@
     /// This trigger activates, if the connection being established is outside of the home provider
     /// matches the specified <see cref="AdaptiveTriggerBase{TCondition,TConditionModifier}.Condition"/>.
     /// </summary>
-    public class IsRoamingDataTrigger : AdaptiveTriggerBase<bool, IGenericModifier>
+    public class IsRoamingDataTrigger : AdaptiveTriggerBase<bool, IGenericModifier>,
+                                        IDynamicTrigger
     {
         ///////////////////////////////////////////////////////////////////
         #region Constructors

@@ -9,7 +9,8 @@
     /// matches the specified <see cref="AdaptiveTriggerBase{TCondition,TConditionModifier}.Condition"/>.
     /// </summary>
     /// <remarks>Use this trigger as alternative to the <see cref="AdaptiveTrigger"/>.</remarks>
-    public class WindowWidthTrigger : AdaptiveTriggerBase<double, IComparableModifier>
+    public class WindowWidthTrigger : AdaptiveTriggerBase<double, IComparableModifier>,
+                                      IDynamicTrigger
     {
         ///////////////////////////////////////////////////////////////////
         #region Constructors

@@ -8,7 +8,8 @@
     /// This trigger activates, if the control height
     /// matches the specified <see cref="AdaptiveTriggerBase{TCondition,TConditionModifier}.Condition"/>.
     /// </summary>
-    public class ControlHeightTrigger : AdaptiveTriggerBase<double, IComparableModifier>
+    public class ControlHeightTrigger : AdaptiveTriggerBase<double, IComparableModifier>,
+                                        IDynamicTrigger
     {
         ///////////////////////////////////////////////////////////////////
         #region Fields

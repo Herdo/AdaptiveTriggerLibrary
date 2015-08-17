@@ -7,7 +7,8 @@
     /// This trigger activates, if the current WWAN network registration state
     /// matches the specified <see cref="AdaptiveTriggerBase{TCondition,TConditionModifier}.Condition"/>.
     /// </summary>
-    public class WWANNetworkRegistrationStateTrigger : AdaptiveTriggerBase<WwanNetworkRegistrationState, IComparableModifier>
+    public class WWANNetworkRegistrationStateTrigger : AdaptiveTriggerBase<WwanNetworkRegistrationState, IComparableModifier>,
+                                                       IDynamicTrigger
     {
         ///////////////////////////////////////////////////////////////////
         #region Constructors

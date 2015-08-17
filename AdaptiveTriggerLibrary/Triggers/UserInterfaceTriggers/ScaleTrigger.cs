@@ -7,7 +7,8 @@
     /// This trigger activates, if the current scale
     /// matches the specified <see cref="AdaptiveTriggerBase{TCondition,TConditionModifier}.Condition"/>.
     /// </summary>
-    public class ScaleTrigger : AdaptiveTriggerBase<int, IComparableModifier>
+    public class ScaleTrigger : AdaptiveTriggerBase<int, IComparableModifier>,
+                                IStaticTrigger
     {
         ///////////////////////////////////////////////////////////////////
         #region Constructors

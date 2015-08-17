@@ -8,7 +8,8 @@
     /// matches the specified <see cref="AdaptiveTriggerBase{TCondition,TConditionModifier}.Condition"/>.
     /// </summary>
     /// <remarks>The value range spans from 0 to 5.</remarks>
-    public class SignalStrengthTrigger : AdaptiveTriggerBase<byte, IComparableModifier>
+    public class SignalStrengthTrigger : AdaptiveTriggerBase<byte, IComparableModifier>,
+                                         IDynamicTrigger
     {
         ///////////////////////////////////////////////////////////////////
         #region Constructors

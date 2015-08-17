@@ -10,7 +10,8 @@
     /// This trigger activates, if any or all (depending on <see cref="AdaptiveTriggerBase{TCondition,TConditionModifier}.ConditionModifier"/>)
     /// of the specified <see cref="Triggers"/> matches the <see cref="AdaptiveTriggerBase{TCondition,TConditionModifier}.Condition"/>.
     /// </summary>
-    public class MultiTrigger : AdaptiveTriggerBase<bool, ILogicalModifier>
+    public class MultiTrigger : AdaptiveTriggerBase<bool, ILogicalModifier>,
+                                IDynamicTrigger
     {
         ///////////////////////////////////////////////////////////////////
         #region Fields

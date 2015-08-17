@@ -9,7 +9,8 @@
     /// This trigger activates, if the current input type
     /// matches the specified <see cref="AdaptiveTriggerBase{TCondition,TConditionModifier}.Condition"/>.
     /// </summary>
-    public class InputTypeTrigger : AdaptiveTriggerBase<PointerDeviceType, IGenericModifier>
+    public class InputTypeTrigger : AdaptiveTriggerBase<PointerDeviceType, IGenericModifier>,
+                                    IDynamicTrigger
     {
         ///////////////////////////////////////////////////////////////////
         #region Fields

@@ -8,7 +8,8 @@
     /// This trigger activates, if the current remaining discharge time
     /// matches the specified <see cref="AdaptiveTriggerBase{TCondition,TConditionModifier}.Condition"/>.
     /// </summary>
-    public class RemainingDischargeTimeTrigger : AdaptiveTriggerBase<TimeSpan, IComparableModifier>
+    public class RemainingDischargeTimeTrigger : AdaptiveTriggerBase<TimeSpan, IComparableModifier>,
+                                                 IDynamicTrigger
     {
         ///////////////////////////////////////////////////////////////////
         #region Constructors

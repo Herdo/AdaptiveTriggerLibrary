@@ -7,7 +7,8 @@
     /// This trigger activates, if the current energy saver status
     /// matches the specified <see cref="AdaptiveTriggerBase{TCondition,TConditionModifier}.Condition"/>.
     /// </summary>
-    public class EnergySaveStatusTrigger : AdaptiveTriggerBase<EnergySaverStatus, IComparableModifier>
+    public class EnergySaveStatusTrigger : AdaptiveTriggerBase<EnergySaverStatus, IComparableModifier>,
+                                           IDynamicTrigger
     {
         ///////////////////////////////////////////////////////////////////
         #region Constructors

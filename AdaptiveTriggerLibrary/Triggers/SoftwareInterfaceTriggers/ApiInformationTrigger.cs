@@ -7,7 +7,8 @@
     /// This trigger activates, if a specified API (type or contract) availability
     /// matches the specified <see cref="AdaptiveTriggerBase{TCondition,TConditionModifier}.Condition"/>.
     /// </summary>
-    public class ApiInformationTrigger : AdaptiveTriggerBase<bool, IGenericModifier>
+    public class ApiInformationTrigger : AdaptiveTriggerBase<bool, IGenericModifier>,
+                                         IStaticTrigger
     {
         ///////////////////////////////////////////////////////////////////
         #region Fields

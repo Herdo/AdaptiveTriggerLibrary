@@ -7,7 +7,8 @@
     /// This trigger activates, if the network authentication type
     /// matches the specified <see cref="AdaptiveTriggerBase{TCondition,TConditionModifier}.Condition"/>.
     /// </summary>
-    public class NetworkAuthenticationTypeTrigger : AdaptiveTriggerBase<NetworkAuthenticationType, IComparableModifier>
+    public class NetworkAuthenticationTypeTrigger : AdaptiveTriggerBase<NetworkAuthenticationType, IComparableModifier>,
+                                                    IDynamicTrigger
     {
         ///////////////////////////////////////////////////////////////////
         #region Constructors

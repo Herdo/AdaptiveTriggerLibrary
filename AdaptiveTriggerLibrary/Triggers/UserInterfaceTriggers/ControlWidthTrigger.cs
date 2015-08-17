@@ -8,7 +8,8 @@
     /// This trigger activates, if the control width
     /// matches the specified <see cref="AdaptiveTriggerBase{TCondition,TConditionModifier}.Condition"/>.
     /// </summary>
-    public class ControlWidthTrigger : AdaptiveTriggerBase<double, IComparableModifier>
+    public class ControlWidthTrigger : AdaptiveTriggerBase<double, IComparableModifier>,
+                                       IDynamicTrigger
     {
         ///////////////////////////////////////////////////////////////////
         #region Fields
