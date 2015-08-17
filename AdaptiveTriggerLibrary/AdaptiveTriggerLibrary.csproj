@@ -158,6 +158,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Triggers\AdaptiveTriggerBase.cs" />
     <Compile Include="Triggers\HardwareInterfaceTriggers\DeviceFamilyTrigger.cs" />
+    <Compile Include="Triggers\IDynamicTrigger.cs" />
+    <Compile Include="Triggers\IStaticTrigger.cs" />
     <Compile Include="Triggers\LogicalTriggers\MultiTrigger.cs" />
     <Compile Include="Triggers\SoftwareInterfaceTriggers\ApiInformationTrigger.cs" />
     <Compile Include="Triggers\SoftwareInterfaceTriggers\DeviceFamilyVersionTrigger.cs" />
