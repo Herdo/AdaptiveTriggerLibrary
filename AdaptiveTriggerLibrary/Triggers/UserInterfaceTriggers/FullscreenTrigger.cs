@@ -53,9 +53,8 @@
             : base(true, new EqualsModifier<bool>())
         {
             _useFullScreenModeProperty = false;
-
-            // Create a weak subscription to the UI event so that we don't pin the trigger or page in memory
-            Window.Current.SizeChanged += CurrentWindow_SizeChanged;
+            
+            Window.Current.SizeChanged += MainWindow_SizeChanged;
 
             // Set initial value
             CurrentValue = GetCurrentValue();
@@ -79,9 +78,29 @@
         ///////////////////////////////////////////////////////////////////
         #region Event Handler
 
-        private void CurrentWindow_SizeChanged(object sender, WindowSizeChangedEventArgs e)
+        private void MainWindow_SizeChanged(object sender, WindowSizeChangedEventArgs e)
         {
             CurrentValue = GetCurrentValue();
+        }
+
+        #endregion
+
+        ///////////////////////////////////////////////////////////////////
+        #region IDynamicTrigger Members
+
+        void IDynamicTrigger.ForceValidation()
+        {
+            CurrentValue = GetCurrentValue();
+        }
+
+        void IDynamicTrigger.SuspendUpdates()
+        {
+            Window.Current.SizeChanged -= MainWindow_SizeChanged;
+        }
+
+        void IDynamicTrigger.ResumeUpdates()
+        {
+            Window.Current.SizeChanged += MainWindow_SizeChanged;
         }
 
         #endregion

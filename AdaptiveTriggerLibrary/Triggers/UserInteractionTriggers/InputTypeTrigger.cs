@@ -81,5 +81,27 @@
         }
 
         #endregion
+
+        ///////////////////////////////////////////////////////////////////
+        #region IDynamicTrigger Members
+
+        void IDynamicTrigger.ForceValidation()
+        {
+            CurrentValue = GetCurrentValue();
+        }
+
+        void IDynamicTrigger.SuspendUpdates()
+        {
+            if (_targetElement != null)
+                _targetElement.PointerPressed -= TargetElement_PointerPressed;
+        }
+
+        void IDynamicTrigger.ResumeUpdates()
+        {
+            if (_targetElement != null)
+                _targetElement.PointerPressed += TargetElement_PointerPressed;
+        }
+
+        #endregion
     }
 }

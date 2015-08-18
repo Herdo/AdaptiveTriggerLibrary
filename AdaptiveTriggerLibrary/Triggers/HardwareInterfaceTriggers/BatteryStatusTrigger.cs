@@ -48,5 +48,25 @@
         }
 
         #endregion
+
+        ///////////////////////////////////////////////////////////////////
+        #region IDynamicTrigger Members
+
+        void IDynamicTrigger.ForceValidation()
+        {
+            CurrentValue = GetCurrentValue();
+        }
+
+        void IDynamicTrigger.SuspendUpdates()
+        {
+            PowerManager.BatteryStatusChanged -= PowerManager_BatteryStatusChanged;
+        }
+
+        void IDynamicTrigger.ResumeUpdates()
+        {
+            PowerManager.BatteryStatusChanged += PowerManager_BatteryStatusChanged;
+        }
+
+        #endregion
     }
 }

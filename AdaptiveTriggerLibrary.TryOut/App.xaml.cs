@@ -1,27 +1,28 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.ApplicationModel;
-using Windows.ApplicationModel.Activation;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.UI.Xaml;
-using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-
-namespace AdaptiveTriggerLibrary.TryOut
+﻿namespace AdaptiveTriggerLibrary.TryOut
 {
+    using System;
+    using System.Diagnostics;
+    using Windows.ApplicationModel;
+    using Windows.ApplicationModel.Activation;
+    using Windows.UI.Xaml;
+    using Windows.UI.Xaml.Controls;
+    using Windows.UI.Xaml.Navigation;
+    using Extensibility;
+    using Triggers;
+
     /// <summary>
     /// Provides application-specific behavior to supplement the default Application class.
     /// </summary>
     sealed partial class App : Application
     {
+        private static readonly IAdaptiveTriggerManager AdaptiveTriggerManager;
+
+        static App()
+        {
+            AdaptiveTriggerManager = new DefaultAdaptiveTriggerManager();
+            AdaptiveTriggerBase.TriggerManager = AdaptiveTriggerManager;
+        }
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -29,6 +30,7 @@ namespace AdaptiveTriggerLibrary.TryOut
         public App()
         {
             this.InitializeComponent();
+            this.Resuming += OnResuming;
             this.Suspending += OnSuspending;
         }
 
@@ -41,7 +43,7 @@ namespace AdaptiveTriggerLibrary.TryOut
         {
 
 #if DEBUG
-            if (System.Diagnostics.Debugger.IsAttached)
+            if (Debugger.IsAttached)
             {
                 this.DebugSettings.EnableFrameRateCounter = true;
             }
@@ -88,6 +90,11 @@ namespace AdaptiveTriggerLibrary.TryOut
             throw new Exception("Failed to load Page " + e.SourcePageType.FullName);
         }
 
+        private void OnResuming(object sender, object e)
+        {
+            AdaptiveTriggerManager.ResumeAndValidateAllDynamicTriggers();
+        }
+
         /// <summary>
         /// Invoked when application execution is being suspended.  Application state is saved
         /// without knowing whether the application will be terminated or resumed with the contents
@@ -98,7 +105,7 @@ namespace AdaptiveTriggerLibrary.TryOut
         private void OnSuspending(object sender, SuspendingEventArgs e)
         {
             var deferral = e.SuspendingOperation.GetDeferral();
-            //TODO: Save application state and stop any background activity
+            AdaptiveTriggerManager.SuspendAllDynamicTriggers();
             deferral.Complete();
         }
     }

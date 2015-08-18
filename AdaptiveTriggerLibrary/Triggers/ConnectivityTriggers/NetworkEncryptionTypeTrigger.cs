@@ -49,5 +49,25 @@
         }
 
         #endregion
+
+        ///////////////////////////////////////////////////////////////////
+        #region IDynamicTrigger Members
+
+        void IDynamicTrigger.ForceValidation()
+        {
+            CurrentValue = GetCurrentValue();
+        }
+
+        void IDynamicTrigger.SuspendUpdates()
+        {
+            NetworkInformation.NetworkStatusChanged -= NetworkInformation_NetworkStatusChanged;
+        }
+
+        void IDynamicTrigger.ResumeUpdates()
+        {
+            NetworkInformation.NetworkStatusChanged += NetworkInformation_NetworkStatusChanged;
+        }
+
+        #endregion
     }
 }

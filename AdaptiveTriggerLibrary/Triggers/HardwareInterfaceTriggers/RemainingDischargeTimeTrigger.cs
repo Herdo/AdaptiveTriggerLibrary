@@ -49,5 +49,25 @@
         }
 
         #endregion
+
+        ///////////////////////////////////////////////////////////////////
+        #region IDynamicTrigger Members
+
+        void IDynamicTrigger.ForceValidation()
+        {
+            CurrentValue = GetCurrentValue();
+        }
+
+        void IDynamicTrigger.SuspendUpdates()
+        {
+            PowerManager.RemainingDischargeTimeChanged -= PowerManager_RemainingDischargeTimeChanged;
+        }
+
+        void IDynamicTrigger.ResumeUpdates()
+        {
+            PowerManager.RemainingDischargeTimeChanged += PowerManager_RemainingDischargeTimeChanged;
+        }
+
+        #endregion
     }
 }

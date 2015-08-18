@@ -22,7 +22,6 @@
         public OrientationTrigger()
             : base(new EqualsModifier<ApplicationViewOrientation>())
         {
-            // Create a weak subscription to the SizeChanged event so that we don't pin the trigger or page in memory
             Window.Current.SizeChanged += MainWindow_SizeChanged;
 
             // Set initial value
@@ -51,6 +50,26 @@
         private void MainWindow_SizeChanged(object sender, WindowSizeChangedEventArgs windowSizeChangedEventArgs)
         {
             CurrentValue = GetCurrentValue();
+        }
+
+        #endregion
+
+        ///////////////////////////////////////////////////////////////////
+        #region IDynamicTrigger Members
+
+        void IDynamicTrigger.ForceValidation()
+        {
+            CurrentValue = GetCurrentValue();
+        }
+
+        void IDynamicTrigger.SuspendUpdates()
+        {
+            Window.Current.SizeChanged -= MainWindow_SizeChanged;
+        }
+
+        void IDynamicTrigger.ResumeUpdates()
+        {
+            Window.Current.SizeChanged += MainWindow_SizeChanged;
         }
 
         #endregion

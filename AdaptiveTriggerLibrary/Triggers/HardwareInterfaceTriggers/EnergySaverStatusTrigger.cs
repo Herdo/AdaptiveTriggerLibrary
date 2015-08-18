@@ -48,5 +48,25 @@
         }
 
         #endregion
+
+        ///////////////////////////////////////////////////////////////////
+        #region IDynamicTrigger Members
+
+        void IDynamicTrigger.ForceValidation()
+        {
+            CurrentValue = GetCurrentValue();
+        }
+
+        void IDynamicTrigger.SuspendUpdates()
+        {
+            PowerManager.EnergySaverStatusChanged -= PowerManager_EnergySaverStatusChanged;
+        }
+
+        void IDynamicTrigger.ResumeUpdates()
+        {
+            PowerManager.EnergySaverStatusChanged += PowerManager_EnergySaverStatusChanged;
+        }
+
+        #endregion
     }
 }

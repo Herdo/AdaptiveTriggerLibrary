@@ -121,5 +121,27 @@
         }
 
         #endregion
+
+        ///////////////////////////////////////////////////////////////////
+        #region IDynamicTrigger Members
+
+        void IDynamicTrigger.ForceValidation()
+        {
+            CurrentValue = GetCurrentValue();
+        }
+
+        void IDynamicTrigger.SuspendUpdates()
+        {
+            foreach (var adaptiveTrigger in Triggers)
+                adaptiveTrigger.IsActiveChanged -= Trigger_IsActiveChanged;
+        }
+
+        void IDynamicTrigger.ResumeUpdates()
+        {
+            foreach (var adaptiveTrigger in Triggers)
+                adaptiveTrigger.IsActiveChanged += Trigger_IsActiveChanged;
+        }
+
+        #endregion
     }
 }
