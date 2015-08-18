@@ -138,6 +138,8 @@
     <Compile Include="ConditionModifiers\LogicalModifiers\OrModifier.cs" />
     <Compile Include="ConditionModifiers\ModifierBase.cs" />
     <Compile Include="Enums\LayoutDirection.cs" />
+    <Compile Include="Extensibility\DefaultAdaptiveTriggerManager.cs" />
+    <Compile Include="Extensibility\IAdaptiveTriggerManager.cs" />
     <Compile Include="Triggers\ConnectivityTriggers\OverDataLimitTrigger.cs" />
     <Compile Include="Triggers\ConnectivityTriggers\ApproachingDataLimitTrigger.cs" />
     <Compile Include="Triggers\ConnectivityTriggers\NetworkEncryptionTypeTrigger.cs" />
