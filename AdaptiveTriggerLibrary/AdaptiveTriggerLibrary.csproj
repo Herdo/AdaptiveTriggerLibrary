@@ -140,6 +140,7 @@
     <Compile Include="Enums\LayoutDirection.cs" />
     <Compile Include="Extensibility\DefaultAdaptiveTriggerManager.cs" />
     <Compile Include="Extensibility\IAdaptiveTriggerManager.cs" />
+    <Compile Include="Triggers\AwarenessTriggers\DayOfWeekTrigger.cs" />
     <Compile Include="Triggers\AwarenessTriggers\TimeTrigger.cs" />
     <Compile Include="Triggers\AwarenessTriggers\DateTimeTrigger.cs" />
     <Compile Include="Triggers\ConnectivityTriggers\OverDataLimitTrigger.cs" />
