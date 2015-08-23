@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
-  <Identity Name="bc76a8e0-d1df-4ee4-9afd-22a5abb2e863" Publisher="CN=Stefan" Version="1.2.0.0" />
+  <Identity Name="bc76a8e0-d1df-4ee4-9afd-22a5abb2e863" Publisher="CN=Stefan" Version="1.2.1.0" />
   <mp:PhoneIdentity PhoneProductId="bc76a8e0-d1df-4ee4-9afd-22a5abb2e863" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>AdaptiveTriggerLibrary.UnitTestApp</DisplayName>

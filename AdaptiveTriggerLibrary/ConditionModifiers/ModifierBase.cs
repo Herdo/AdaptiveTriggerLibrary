@@ -10,7 +10,13 @@
         ///////////////////////////////////////////////////////////////////
         #region Fields
 
+        /// <summary>
+        /// Backing field for derived classes accessing <see cref="IConditionModifier.TreatNullAsConditionMet"/>.
+        /// </summary>
         protected bool TreatNullAsConditionIsMet;
+        /// <summary>
+        /// Backing field for derived classes accessing <see cref="IConditionModifier.TreatNullAsConditionNotMet"/>.
+        /// </summary>
         protected bool TreatNullAsConditionIsNotMet;
 
         #endregion
@@ -29,6 +35,9 @@
         ///////////////////////////////////////////////////////////////////
         #region Constructors
 
+        /// <summary>
+        /// Creates a new instance of the <see cref="ModifierBase"/> class.
+        /// </summary>
         protected ModifierBase()
         {
             TreatNullAsConditionIsMet = false;
@@ -95,6 +104,15 @@
             }
         }
 
+        /// <summary>
+        /// Checks if the <paramref name="value"/> meets the specified <paramref name="condition"/>.
+        /// </summary>
+        /// <param name="condition">The condition.</param>
+        /// <param name="value">The actual value.</param>
+        /// <exception cref="ArgumentException">The underlying type of <paramref name="condition"/> doesn't match expected condition type,
+        /// or the underlying type of<paramref name="value"/> doesn't match the expected value type.</exception>
+        /// <exception cref="InvalidCastException">Either <paramref name="condition"/> or <paramref name="value"/> cannot be casted to the specified underlying type.</exception>
+        /// <returns>True, if the <paramref name="value"/> meets the specified <paramref name="condition"/>, otherwise false.</returns>
         public abstract bool IsConditionMet(object condition, object value);
 
         #endregion
