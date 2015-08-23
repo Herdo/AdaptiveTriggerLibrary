@@ -5,6 +5,14 @@ The library comes as a single DLL - based on .NET Framework 4.6 - which can easi
 **_This package requires NuGet 3.0 or higher!_**
 
 ## Overview of Adaptive Triggers
+#### Awareness Triggers
+- Altitude Trigger
+- Date Time Trigger
+- Day of Week Trigger
+- Latitude Trigger
+- Longitude Trigger
+- Time Trigger
+
 #### Connectivity Triggers
 - Approaching Data Limit Trigger
 - Is Roaming Data Trigger
