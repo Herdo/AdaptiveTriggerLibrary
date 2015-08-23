@@ -32,7 +32,7 @@
         /// or the underlying type of<paramref name="value"/> doesn't match the expected value type.</exception>
         /// <exception cref="InvalidCastException">Either <paramref name="condition"/> or <paramref name="value"/> cannot be casted to the specified underlying type.</exception>
         /// <returns>True, if the <paramref name="value"/> meets the specified <paramref name="condition"/>, otherwise false.</returns>
-        bool IConditionModifier.IsConditionMet(object condition, object value)
+        public override bool IsConditionMet(object condition, object value)
         {
             Tuple<bool, bool> singleValueParameters;
             Tuple<bool, IEnumerable<bool>> multiValueParameters;

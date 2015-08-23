@@ -10,6 +10,22 @@
     public interface IConditionModifier
     {
         /// <summary>
+        /// Gets or sets if a null value is treated as if the condition is met.
+        /// </summary>
+        /// <remarks>Default is false.</remarks>
+        /// <exception cref="InvalidOperationException">Setting <see cref="TreatNullAsConditionMet"/> to true,
+        /// while <see cref="TreatNullAsConditionNotMet"/> is already true.</exception>
+        bool TreatNullAsConditionMet { get; set; }
+
+        /// <summary>
+        /// Gets or sets if a null value is treated as if the condition is not met.
+        /// </summary>
+        /// <remarks>Default is false.</remarks>
+        /// <exception cref="InvalidOperationException">Setting <see cref="TreatNullAsConditionNotMet"/> to true,
+        /// while <see cref="TreatNullAsConditionMet"/> is already true.</exception>
+        bool TreatNullAsConditionNotMet { get; set; }
+
+        /// <summary>
         /// Checks if the <paramref name="value"/> meets the specified <paramref name="condition"/>.
         /// </summary>
         /// <param name="condition">The condition.</param>

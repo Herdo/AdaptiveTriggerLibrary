@@ -5,8 +5,16 @@
     /// <summary>
     /// Base class for modifiers.
     /// </summary>
-    public abstract class ModifierBase
+    public abstract class ModifierBase : IConditionModifier
     {
+        ///////////////////////////////////////////////////////////////////
+        #region Fields
+
+        private bool _treatNullAsConditionMet;
+        private bool _treatNullAsConditionNotMet;
+
+        #endregion
+
         ///////////////////////////////////////////////////////////////////
         #region Properties
 
@@ -15,6 +23,17 @@
         /// </summary>
         protected const string InvalidCastMessage =
             "Parameters could not be parsed to a type that the method can handle.";
+
+        #endregion
+
+        ///////////////////////////////////////////////////////////////////
+        #region Constructors
+
+        protected ModifierBase()
+        {
+            _treatNullAsConditionMet = false;
+            _treatNullAsConditionNotMet = false;
+        }
 
         #endregion
 
@@ -44,6 +63,39 @@
             parsedParameters = null;
             return false;
         }
+
+        #endregion
+
+        ///////////////////////////////////////////////////////////////////
+        #region IConditionModifier Members
+
+        bool IConditionModifier.TreatNullAsConditionMet
+        {
+            get { return _treatNullAsConditionMet; }
+            set
+            {
+                if (value == _treatNullAsConditionMet) return;
+                if (value && _treatNullAsConditionNotMet)
+                    throw new InvalidOperationException(
+                        "Cannot set 'IConditionModifier.TreatNullAsConditionMet' to true, while IConditionModifier.TreatNullAsConditionNotMet is already true.");
+                _treatNullAsConditionMet = value;
+            }
+        }
+
+        bool IConditionModifier.TreatNullAsConditionNotMet
+        {
+            get { return _treatNullAsConditionNotMet; }
+            set
+            {
+                if (value == _treatNullAsConditionNotMet) return;
+                if (value && _treatNullAsConditionMet)
+                    throw new InvalidOperationException(
+                        "Cannot set 'IConditionModifier.TreatNullAsConditionNotMet' to true, while IConditionModifier.TreatNullAsConditionMet is already true.");
+                _treatNullAsConditionNotMet = value;
+            }
+        }
+
+        public abstract bool IsConditionMet(object condition, object value);
 
         #endregion
     }
