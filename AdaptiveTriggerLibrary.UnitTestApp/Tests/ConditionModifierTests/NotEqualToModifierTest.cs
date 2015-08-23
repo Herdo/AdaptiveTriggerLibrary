@@ -23,6 +23,36 @@
         }
 
         [TestMethod]
+        public void NotEqualTo_AllowNullValue_ConditionMet()
+        {
+            // Arrange
+            bool result;
+            IConditionModifier modifier = new NotEqualToModifier();
+            modifier.TreatNullAsConditionMet = true;
+
+            // Act
+            result = modifier.IsConditionMet(null, null);
+
+            // Assert
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void NotEqualTo_AllowNullValue_ConditionNotMet()
+        {
+            // Arrange
+            bool result;
+            IConditionModifier modifier = new NotEqualToModifier();
+            modifier.TreatNullAsConditionNotMet = true;
+
+            // Act
+            result = modifier.IsConditionMet(null, null);
+
+            // Assert
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
         public void NotEqualTo_Bool_True()
         {
             // Arrange

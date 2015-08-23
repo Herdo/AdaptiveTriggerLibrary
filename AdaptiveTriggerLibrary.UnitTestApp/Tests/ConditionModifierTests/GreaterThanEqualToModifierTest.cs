@@ -23,6 +23,36 @@
         }
 
         [TestMethod]
+        public void GreaterThanEqualTo_AllowNullValue_ConditionMet()
+        {
+            // Arrange
+            bool result;
+            IConditionModifier modifier = new GreaterThanEqualToModifier();
+            modifier.TreatNullAsConditionMet = true;
+
+            // Act
+            result = modifier.IsConditionMet(null, null);
+
+            // Assert
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void GreaterThanEqualTo_AllowNullValue_ConditionNotMet()
+        {
+            // Arrange
+            bool result;
+            IConditionModifier modifier = new GreaterThanEqualToModifier();
+            modifier.TreatNullAsConditionNotMet = true;
+
+            // Act
+            result = modifier.IsConditionMet(null, null);
+
+            // Assert
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
         public void GreaterThanEqualTo_Bool_True()
         {
             // Arrange

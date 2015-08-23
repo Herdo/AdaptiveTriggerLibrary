@@ -23,6 +23,36 @@
         }
 
         [TestMethod]
+        public void And_AllowNullValue_ConditionMet()
+        {
+            // Arrange
+            bool result;
+            IConditionModifier modifier = new AndModifier();
+            modifier.TreatNullAsConditionMet = true;
+
+            // Act
+            result = modifier.IsConditionMet(null, null);
+
+            // Assert
+            Assert.IsTrue(result);
+        }
+
+        [TestMethod]
+        public void And_AllowNullValue_ConditionNotMet()
+        {
+            // Arrange
+            bool result;
+            IConditionModifier modifier = new AndModifier();
+            modifier.TreatNullAsConditionNotMet = true;
+
+            // Act
+            result = modifier.IsConditionMet(null, null);
+
+            // Assert
+            Assert.IsFalse(result);
+        }
+
+        [TestMethod]
         public void And_AllTrue_Single()
         {
             // Arrange
