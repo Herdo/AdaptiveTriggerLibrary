@@ -34,6 +34,15 @@
         /// <returns>True, if the <paramref name="value"/> meets the specified <paramref name="condition"/>, otherwise false.</returns>
         public override bool IsConditionMet(object condition, object value)
         {
+            // Null handling
+            if (value == null)
+            {
+                if (TreatNullAsConditionIsMet)
+                    return true;
+                if (TreatNullAsConditionIsNotMet)
+                    return false;
+            }
+
             Tuple<IComparable, IComparable> singleValueParameters;
 
             var parsed = TryGetParsedParameters(condition, value, out singleValueParameters);

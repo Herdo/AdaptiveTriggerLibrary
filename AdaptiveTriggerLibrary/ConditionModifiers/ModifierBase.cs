@@ -10,8 +10,8 @@
         ///////////////////////////////////////////////////////////////////
         #region Fields
 
-        private bool _treatNullAsConditionMet;
-        private bool _treatNullAsConditionNotMet;
+        protected bool TreatNullAsConditionIsMet;
+        protected bool TreatNullAsConditionIsNotMet;
 
         #endregion
 
@@ -31,8 +31,8 @@
 
         protected ModifierBase()
         {
-            _treatNullAsConditionMet = false;
-            _treatNullAsConditionNotMet = false;
+            TreatNullAsConditionIsMet = false;
+            TreatNullAsConditionIsNotMet = false;
         }
 
         #endregion
@@ -71,27 +71,27 @@
 
         bool IConditionModifier.TreatNullAsConditionMet
         {
-            get { return _treatNullAsConditionMet; }
+            get { return TreatNullAsConditionIsMet; }
             set
             {
-                if (value == _treatNullAsConditionMet) return;
-                if (value && _treatNullAsConditionNotMet)
+                if (value == TreatNullAsConditionIsMet) return;
+                if (value && TreatNullAsConditionIsNotMet)
                     throw new InvalidOperationException(
                         "Cannot set 'IConditionModifier.TreatNullAsConditionMet' to true, while IConditionModifier.TreatNullAsConditionNotMet is already true.");
-                _treatNullAsConditionMet = value;
+                TreatNullAsConditionIsMet = value;
             }
         }
 
         bool IConditionModifier.TreatNullAsConditionNotMet
         {
-            get { return _treatNullAsConditionNotMet; }
+            get { return TreatNullAsConditionIsNotMet; }
             set
             {
-                if (value == _treatNullAsConditionNotMet) return;
-                if (value && _treatNullAsConditionMet)
+                if (value == TreatNullAsConditionIsNotMet) return;
+                if (value && TreatNullAsConditionIsMet)
                     throw new InvalidOperationException(
                         "Cannot set 'IConditionModifier.TreatNullAsConditionNotMet' to true, while IConditionModifier.TreatNullAsConditionMet is already true.");
-                _treatNullAsConditionNotMet = value;
+                TreatNullAsConditionIsNotMet = value;
             }
         }
 
