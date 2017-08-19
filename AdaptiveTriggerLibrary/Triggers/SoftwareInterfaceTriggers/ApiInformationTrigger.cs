@@ -29,7 +29,7 @@
         /// </summary>
         public string ContractName
         {
-            get { return _contractName; }
+            get => _contractName;
             set
             {
                 if (value == _contractName) return;
@@ -44,7 +44,7 @@
         /// <remarks>Default is 1.</remarks>
         public int ContractMajorVersion
         {
-            get { return _contractMajorVersion; }
+            get => _contractMajorVersion;
             set
             {
                 if (value == _contractMajorVersion) return;
@@ -58,7 +58,7 @@
         /// </summary>
         public int? ContractMinorVersion
         {
-            get { return _contractMinorVersion; }
+            get => _contractMinorVersion;
             set
             {
                 if (value == _contractMinorVersion) return;
@@ -72,7 +72,7 @@
         /// </summary>
         public string TypeName
         {
-            get { return _typeName; }
+            get => _typeName;
             set
             {
                 if (value == _typeName) return;
@@ -87,7 +87,7 @@
         /// <remarks>Default is false.</remarks>
         public bool RequireTypeAndContract
         {
-            get { return _requireTypeAndContract; }
+            get => _requireTypeAndContract;
             set
             {
                 if (value == _requireTypeAndContract) return;

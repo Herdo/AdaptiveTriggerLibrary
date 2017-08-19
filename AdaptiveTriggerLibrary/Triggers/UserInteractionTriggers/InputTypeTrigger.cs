@@ -28,7 +28,7 @@
         /// </summary>
         public FrameworkElement TargetElement
         {
-            get { return _targetElement; }
+            get => _targetElement;
             set
             {
                 if (value == _targetElement) return;

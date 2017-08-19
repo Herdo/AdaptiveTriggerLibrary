@@ -29,7 +29,7 @@
         /// <remarks>Default is 1 hour.</remarks>
         public TimeSpan TimerInterval
         {
-            get { return _timerInterval; }
+            get => _timerInterval;
             set
             {
                 if (value == _timerInterval) return;
@@ -45,7 +45,7 @@
         /// </summary>
         public bool UseUTC
         {
-            get { return _useUtc; }
+            get => _useUtc;
             set
             {
                 if (value == _useUtc) return;

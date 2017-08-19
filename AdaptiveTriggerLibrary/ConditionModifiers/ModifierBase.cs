@@ -80,7 +80,7 @@
 
         bool IConditionModifier.TreatNullAsConditionMet
         {
-            get { return TreatNullAsConditionIsMet; }
+            get => TreatNullAsConditionIsMet;
             set
             {
                 if (value == TreatNullAsConditionIsMet) return;
@@ -93,7 +93,7 @@
 
         bool IConditionModifier.TreatNullAsConditionNotMet
         {
-            get { return TreatNullAsConditionIsNotMet; }
+            get => TreatNullAsConditionIsNotMet;
             set
             {
                 if (value == TreatNullAsConditionIsNotMet) return;

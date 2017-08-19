@@ -27,7 +27,7 @@
         /// </summary>
         public FrameworkElement TargetElement
         {
-            get { return _targetElement; }
+            get => _targetElement;
             set
             {
                 if (value == _targetElement) return;
@@ -50,7 +50,7 @@
         /// </summary>
         public bool UseActualHeight
         {
-            get { return _useActualHeight; }
+            get => _useActualHeight;
             set
             {
                 if (value == _useActualHeight) return;

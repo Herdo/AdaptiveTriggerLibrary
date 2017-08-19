@@ -30,7 +30,7 @@
         /// or <see cref="ApplicationView.ExitFullScreenMode"/> method.</remarks>
         public bool UseFullScreenModeProperty
         {
-            get { return _useFullScreenModeProperty; }
+            get => _useFullScreenModeProperty;
             set
             {
                 if(value == _useFullScreenModeProperty) return;

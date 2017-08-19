@@ -1,6 +1,7 @@
 ﻿namespace AdaptiveTriggerLibrary.Triggers
 {
     using System;
+    using Windows.UI.Core;
     using Windows.UI.Xaml;
     using ConditionModifiers;
     using Extensibility;
@@ -60,12 +61,12 @@
         /// </summary>
         public bool IsActive
         {
-            get { return _isActive; }
+            get => _isActive;
             protected set
             {
                 if (value == _isActive) return;
                 _isActive = value;
-                SetActive(IsActive);
+                Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => SetActive(IsActive));
                 IsActiveChanged?.Invoke(this, EventArgs.Empty);
             }
         }
@@ -171,7 +172,7 @@
         /// <exception cref="InvalidOperationException"><see cref="IAdaptiveTrigger{TCondition,TConditionModifier}.Condition"/> is set more than once.</exception>
         public TCondition Condition
         {
-            get { return _condition; }
+            get => _condition;
             set
             {
                 if (_isConditionSet)
@@ -190,7 +191,7 @@
         /// <exception cref="InvalidOperationException"><see cref="IAdaptiveTrigger{TCondition,TConditionModifier}.ConditionModifier"/> is set more than once.</exception>
         public TConditionModifier ConditionModifier
         {
-            get { return _conditionModifier; }
+            get => _conditionModifier;
             set
             {
                 if (_isConditionModifierSet)

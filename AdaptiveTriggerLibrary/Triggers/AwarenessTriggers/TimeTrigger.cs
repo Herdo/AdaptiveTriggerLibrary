@@ -36,7 +36,7 @@
         /// Triggers created before this property is changed won't be affected by the change.</remarks>
         public static bool UseSharedTimer
         {
-            get { return _useSharedTimer; }
+            get => _useSharedTimer;
             set
             {
                 if (value == _useSharedTimer) return;
@@ -57,7 +57,7 @@
         /// <remarks>Default is 10 seconds.</remarks>
         public static TimeSpan SharedTimerInterval
         {
-            get { return _sharedTimerInterval; }
+            get => _sharedTimerInterval;
             set
             {
                 if (value == _sharedTimerInterval) return;
@@ -76,7 +76,7 @@
         /// <remarks>Default is 10 seconds.</remarks>
         public TimeSpan TimerInterval
         {
-            get { return _timerInterval; }
+            get => _timerInterval;
             set
             {
                 if (value == _timerInterval) return;
@@ -92,7 +92,7 @@
         /// </summary>
         public bool UseUTC
         {
-            get { return _useUtc; }
+            get => _useUtc;
             set
             {
                 if (value == _useUtc) return;

@@ -28,7 +28,7 @@
         /// </summary>
         public ObservableCollection<IAdaptiveTrigger> Triggers
         {
-            get { return _triggers; }
+            get => _triggers;
             set
             {
                 if (_triggers != null)
