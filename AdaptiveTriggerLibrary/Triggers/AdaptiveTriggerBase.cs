@@ -66,8 +66,14 @@
             {
                 if (value == _isActive) return;
                 _isActive = value;
-                Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () => SetActive(IsActive));
-                IsActiveChanged?.Invoke(this, EventArgs.Empty);
+#pragma warning disable CS4014
+                Dispatcher.RunAsync(CoreDispatcherPriority.Normal,
+                    () =>
+                    {
+                        SetActive(IsActive);
+                        IsActiveChanged?.Invoke(this, EventArgs.Empty);
+                    });
+#pragma warning restore CS4014
             }
         }
 
