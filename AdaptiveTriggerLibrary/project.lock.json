@@ -15490,12 +15490,12 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "D:\\git\\AdaptiveTriggerLibrary\\AdaptiveTriggerLibrary\\AdaptiveTriggerLibrary.csproj",
+      "projectUniqueName": "S:\\git\\AdaptiveTriggerLibrary\\AdaptiveTriggerLibrary\\AdaptiveTriggerLibrary.csproj",
       "projectName": "AdaptiveTriggerLibrary",
-      "projectPath": "D:\\git\\AdaptiveTriggerLibrary\\AdaptiveTriggerLibrary\\AdaptiveTriggerLibrary.csproj",
-      "projectJsonPath": "D:\\git\\AdaptiveTriggerLibrary\\AdaptiveTriggerLibrary\\project.json",
+      "projectPath": "S:\\git\\AdaptiveTriggerLibrary\\AdaptiveTriggerLibrary\\AdaptiveTriggerLibrary.csproj",
+      "projectJsonPath": "S:\\git\\AdaptiveTriggerLibrary\\AdaptiveTriggerLibrary\\project.json",
       "packagesPath": "C:\\Users\\Stefan\\.nuget\\packages\\",
-      "outputPath": "D:\\git\\AdaptiveTriggerLibrary\\AdaptiveTriggerLibrary\\obj\\",
+      "outputPath": "S:\\git\\AdaptiveTriggerLibrary\\AdaptiveTriggerLibrary\\obj\\",
       "projectStyle": "ProjectJson",
       "configFilePaths": [
         "C:\\Users\\Stefan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -15503,12 +15503,11 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "D:\\Local NuGet Packages": {},
         "https://api.nuget.org/v3/index.json": {}
       }
     },
     "dependencies": {
-      "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0"
+      "Microsoft.NETCore.UniversalWindowsPlatform": "[5.0.0, )"
     },
     "frameworks": {
       "uap10.0.10240": {}

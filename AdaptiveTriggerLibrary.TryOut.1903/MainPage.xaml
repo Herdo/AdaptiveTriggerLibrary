@@ -1,0 +1,205 @@
+﻿<Page
+    x:Class="AdaptiveTriggerLibrary.TryOut._1903.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:logicalModifiers="using:AdaptiveTriggerLibrary.ConditionModifiers.LogicalModifiers"
+    xmlns:comparableModifiers="using:AdaptiveTriggerLibrary.ConditionModifiers.ComparableModifiers"
+    xmlns:logicalTriggers="using:AdaptiveTriggerLibrary.Triggers.LogicalTriggers"
+    xmlns:hardwareInterfaceTriggers="using:AdaptiveTriggerLibrary.Triggers.HardwareInterfaceTriggers"
+    xmlns:userInterfaceTriggers="using:AdaptiveTriggerLibrary.Triggers.UserInterfaceTriggers"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <logicalModifiers:OrModifier x:Key="OrModifier"/>
+        <comparableModifiers:LessThanModifier x:Key="LessThanModifier"/>
+    </Page.Resources>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <VisualStateManager.VisualStateGroups>
+            <!-- Visual State Group for Device Family -->
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <logicalTriggers:MultiTrigger ConditionModifier="{StaticResource OrModifier}">
+                            <logicalTriggers:MultiTrigger.Triggers>
+                                <hardwareInterfaceTriggers:DeviceFamilyTrigger Condition="Desktop"/>
+                                <hardwareInterfaceTriggers:DeviceFamilyTrigger Condition="Mobile"/>
+                            </logicalTriggers:MultiTrigger.Triggers>
+                        </logicalTriggers:MultiTrigger>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="SupportedTextBlock.Text"
+                                Value="This device family is supported :)"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+
+            <!-- Visual State Group for Layout -->
+            <VisualStateGroup>
+                <!-- Vertical Layout -->
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <userInterfaceTriggers:OrientationTrigger Condition="Portrait"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="HorizontalRectangle.Visibility"
+                                Value="Collapsed"/>
+                        <Setter Target="VerticalRectangle.Visibility"
+                                Value="Visible"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <!-- Horizontal Layout -->
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <userInterfaceTriggers:OrientationTrigger Condition="Landscape"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="HorizontalRectangle.Visibility"
+                                Value="Visible"/>
+                        <Setter Target="VerticalRectangle.Visibility"
+                                Value="Collapsed"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+
+            <!-- Color Overrides -->
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <userInterfaceTriggers:ControlWidthTrigger x:Name="HorizontalRectangleFillTrigger"
+                                                                   Condition="550"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="HorizontalRectangle.Fill"
+                                Value="Green"/>
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <userInterfaceTriggers:ControlHeightTrigger x:Name="VerticalRectangleFillTrigger"
+                                                                    Condition="400"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="VerticalRectangle.Fill"
+                                Value="Orange"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+
+            <!-- Fullscreen -->
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <userInterfaceTriggers:FullScreenTrigger UseFullScreenModeProperty="True"/>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="FullscreenTextBlock.Text"
+                                Value="This app is running in fullscreen!"/>
+                        <Setter Target="FullscreenButton.Icon"
+                                Value="BackToWindow"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+
+            <!-- Window Size -->
+            <VisualStateGroup>
+                <!-- small -->
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <logicalTriggers:MultiTrigger ConditionModifier="{StaticResource OrModifier}">
+                            <logicalTriggers:MultiTrigger.Triggers>
+                                <userInterfaceTriggers:WindowHeightTrigger Condition="500"
+                                                                           ConditionModifier="{StaticResource LessThanModifier}"/>
+                                <userInterfaceTriggers:WindowWidthTrigger Condition="500"
+                                                                          ConditionModifier="{StaticResource LessThanModifier}"/>
+                            </logicalTriggers:MultiTrigger.Triggers>
+                        </logicalTriggers:MultiTrigger>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="WindowSizeTextBlock.Text"
+                                Value="This is a small window (boring)..."/>
+                    </VisualState.Setters>
+                </VisualState>
+                <!-- BIG -->
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <logicalTriggers:MultiTrigger>
+                            <logicalTriggers:MultiTrigger.Triggers>
+                                <userInterfaceTriggers:WindowHeightTrigger Condition="500"/>
+                                <userInterfaceTriggers:WindowWidthTrigger Condition="500"/>
+                            </logicalTriggers:MultiTrigger.Triggers>
+                        </logicalTriggers:MultiTrigger>
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="WindowSizeTextBlock.Text"
+                                Value="This is a big window! Awesome!"/>
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+
+        <TextBlock Grid.Row="0"
+                   Grid.Column="0"
+                   x:Name="SupportedTextBlock"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   Text="This device family is not supported!"
+                   Foreground="{ThemeResource ApplicationForegroundThemeBrush}"/>
+
+        <Rectangle Grid.Row="1"
+                   Grid.Column="0"
+                   x:Name="HorizontalRectangle"
+                   HorizontalAlignment="Stretch"
+                   VerticalAlignment="Center"
+                   Margin="25"
+                   Height="100"
+                   Fill="Red"
+                   Visibility="Collapsed"/>
+        <Rectangle Grid.Row="1"
+                   Grid.Column="0"
+                   x:Name="VerticalRectangle"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Stretch"
+                   Width="100"
+                   Margin="25"
+                   Fill="Blue"
+                   Visibility="Collapsed"/>
+
+        <StackPanel Grid.Row="0"
+                    Grid.Column="1"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <TextBlock x:Name="FullscreenTextBlock"
+                       HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       Margin="10"
+                       Text="This app is not running in fullscreen!"
+                       Foreground="{ThemeResource ApplicationForegroundThemeBrush}"/>
+            <AppBarButton x:Name="FullscreenButton"
+                          HorizontalAlignment="Center"
+                          VerticalAlignment="Center"
+                          Margin="10"
+                          Icon="FullScreen"
+                          Click="FullscreenButton_Click"
+                          Label="Toggle Fullscreen"/>
+        </StackPanel>
+
+        <TextBlock Grid.Row="1"
+                   Grid.Column="1"
+                   x:Name="WindowSizeTextBlock"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"/>
+    </Grid>
+</Page>

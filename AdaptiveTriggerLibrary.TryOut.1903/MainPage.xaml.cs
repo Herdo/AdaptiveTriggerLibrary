@@ -1,6 +1,6 @@
 ﻿using Windows.UI.Xaml;
 
-namespace AdaptiveTriggerLibrary.TryOut
+namespace AdaptiveTriggerLibrary.TryOut._1903
 {
     using Windows.UI.ViewManagement;
 
@@ -9,7 +9,7 @@ namespace AdaptiveTriggerLibrary.TryOut
         public MainPage()
         {
             InitializeComponent();
-            
+
             // Set target elements
             HorizontalRectangleFillTrigger.TargetElement = HorizontalRectangle;
             VerticalRectangleFillTrigger.TargetElement = VerticalRectangle;

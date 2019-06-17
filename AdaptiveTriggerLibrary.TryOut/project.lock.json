@@ -15544,12 +15544,12 @@
   },
   "project": {
     "restore": {
-      "projectUniqueName": "D:\\git\\AdaptiveTriggerLibrary\\AdaptiveTriggerLibrary.TryOut\\AdaptiveTriggerLibrary.TryOut.csproj",
+      "projectUniqueName": "S:\\git\\AdaptiveTriggerLibrary\\AdaptiveTriggerLibrary.TryOut\\AdaptiveTriggerLibrary.TryOut.csproj",
       "projectName": "AdaptiveTriggerLibrary.TryOut",
-      "projectPath": "D:\\git\\AdaptiveTriggerLibrary\\AdaptiveTriggerLibrary.TryOut\\AdaptiveTriggerLibrary.TryOut.csproj",
-      "projectJsonPath": "D:\\git\\AdaptiveTriggerLibrary\\AdaptiveTriggerLibrary.TryOut\\project.json",
+      "projectPath": "S:\\git\\AdaptiveTriggerLibrary\\AdaptiveTriggerLibrary.TryOut\\AdaptiveTriggerLibrary.TryOut.csproj",
+      "projectJsonPath": "S:\\git\\AdaptiveTriggerLibrary\\AdaptiveTriggerLibrary.TryOut\\project.json",
       "packagesPath": "C:\\Users\\Stefan\\.nuget\\packages\\",
-      "outputPath": "D:\\git\\AdaptiveTriggerLibrary\\AdaptiveTriggerLibrary.TryOut\\obj\\",
+      "outputPath": "S:\\git\\AdaptiveTriggerLibrary\\AdaptiveTriggerLibrary.TryOut\\obj\\",
       "projectStyle": "ProjectJson",
       "configFilePaths": [
         "C:\\Users\\Stefan\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -15557,21 +15557,20 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "D:\\Local NuGet Packages": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "uap10.0.10240": {
           "projectReferences": {
-            "D:\\git\\AdaptiveTriggerLibrary\\AdaptiveTriggerLibrary\\AdaptiveTriggerLibrary.csproj": {
-              "projectPath": "D:\\git\\AdaptiveTriggerLibrary\\AdaptiveTriggerLibrary\\AdaptiveTriggerLibrary.csproj"
+            "S:\\git\\AdaptiveTriggerLibrary\\AdaptiveTriggerLibrary\\AdaptiveTriggerLibrary.csproj": {
+              "projectPath": "S:\\git\\AdaptiveTriggerLibrary\\AdaptiveTriggerLibrary\\AdaptiveTriggerLibrary.csproj"
             }
           }
         }
       }
     },
     "dependencies": {
-      "Microsoft.NETCore.UniversalWindowsPlatform": "5.0.0"
+      "Microsoft.NETCore.UniversalWindowsPlatform": "[5.0.0, )"
     },
     "frameworks": {
       "uap10.0.10240": {}
